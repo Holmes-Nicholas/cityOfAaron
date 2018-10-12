@@ -5,7 +5,7 @@
  * Team members: Nicholas Holmes, David Nielson, Jared Goff
  */
 package cityofaaron;
-
+import model.*;
 /**
  *
  * @author jgoff
@@ -18,7 +18,19 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Welcome to the City Of Aaron");
+        
+        //create a new player
+        Player player = new Player();
+        player.setName("Joe");
+        
+        //create a game object
+        Game game = new Game();
+        game.setPlayer(player);
+        player.getName();
+        
+        System.out.println(TeamMember.NIC.getName() + " - " + TeamMember.NIC.getTitle());
+
+        //System.out.println("Welcome to the City Of Aaron");
     }
-    
+
 }
