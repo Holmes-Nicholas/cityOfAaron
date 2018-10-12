@@ -16,6 +16,7 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println("Welcome to the City Of Aaron");
     }
     
 }
