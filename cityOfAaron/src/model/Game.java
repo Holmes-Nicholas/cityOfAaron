@@ -12,8 +12,6 @@ package model;
  */
 public class Game {
     
-    //public static void main(String[] args) {}
-    
     // Attributes
     private Player thePlayer;
     

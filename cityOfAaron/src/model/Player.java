@@ -12,8 +12,6 @@ package model;
  */
 public class Player 
 {
-    //public static void main(String[] args) {}
-    
     //Instance Fields
     private String name;
     
