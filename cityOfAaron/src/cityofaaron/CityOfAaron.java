@@ -19,18 +19,26 @@ public class CityOfAaron {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        //create a new player
-        Player player = new Player();
-        player.setName("Joe");
+        //create player1 and set name to Joe
+        Player player1 = new Player();
+        player1.setName("Joe");
         
-        //create a game object
-        Game game = new Game();
-        game.setPlayer(player);
-        player.getName();
+        //create new game object and set player to player1
+        Game game1 = new Game();
+        game1.setPlayer(player1);
         
+        //display Player1 name
+        System.out.println("Player Name: " + player1.getName());
+        
+        //display entry from TeamMember enum
         System.out.println(TeamMember.NIC.getName() + " - " + TeamMember.NIC.getTitle());
-
-        //System.out.println("Welcome to the City Of Aaron");
-    }
+        
+        //test from CropData class. Create year1 object and set year to 1980
+        CropData year1 = new CropData();
+        year1.setYear(1980);
+        
+        //display year1 year
+        System.out.println("Year Started: " + year1.getYear());      
+        }
 
 }

@@ -22,9 +22,9 @@ public class Player
     
     
     //Functions
-    public void setName(String n)
+    public void setName(String _name)
     {
-        name = n;
+        name = _name;
     }
     public String getName()
     {

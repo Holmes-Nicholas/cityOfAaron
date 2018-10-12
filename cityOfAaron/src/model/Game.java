@@ -20,9 +20,9 @@ public class Game {
     {}
     
     //Functions
-    public void setPlayer(Player a)
+    public void setPlayer(Player _player)
     {
-        thePlayer = a;
+        thePlayer = _player;
     }
     public Player getPlayer()
     {
