@@ -6,6 +6,7 @@
  */
 package cityofaaron;
 import model.*;
+
 /**
  *@author aaowgne (Dave Nielson)
  * @author jgoff
@@ -38,7 +39,17 @@ public class CityOfAaron {
         year1.setYear(1980);
         
         //display year1 year
-        System.out.println("Year Started: " + year1.getYear());      
-        }
+        System.out.println("Year Started: " + year1.getYear()); 
+        
+        // ListItem created by Jared Goff
+        //Test the ListItem class.  Create arces and setnumber to 100
+        ListItem arces = new ListItem();     
+        arces.setName("arces");
+        arces.setNumber(100);
+        //display number of arces
+        System.out.format("ListItem name is %s. ListItem number %d\n",
+                arces.getName (),
+                arces.getNumber ());
+    }
 
 }
