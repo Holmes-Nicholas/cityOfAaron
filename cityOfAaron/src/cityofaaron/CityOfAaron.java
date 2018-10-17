@@ -50,6 +50,12 @@ public class CityOfAaron {
         System.out.format("ListItem name is %s. ListItem number %d\n",
                 arces.getName (),
                 arces.getNumber ());
+        // Location Data Class by Dave Nielson
+        //Test location
+        Location earth = new Location();
+        earth.setDescription("earth");
+        earth.setSymbol ("globe");
+        System.out.format("")
     }
 
 }
