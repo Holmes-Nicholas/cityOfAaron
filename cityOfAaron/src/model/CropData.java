@@ -11,6 +11,9 @@ package model;
  * @author N
  */
 public class CropData {
+
+   
+    
     //instance fields
     private int year; 
     private int population;
