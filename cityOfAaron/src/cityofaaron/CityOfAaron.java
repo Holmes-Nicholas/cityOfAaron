@@ -55,7 +55,7 @@ public class CityOfAaron {
         Location earth = new Location();
         earth.setDescription("earth");
         earth.setSymbol ("globe");
-        System.out.format("")
+        System.out.format("");
     }
 
 }

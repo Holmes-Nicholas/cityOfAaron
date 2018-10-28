@@ -10,7 +10,8 @@ import model.CropData;
 
 /**
  *
- * @author jgoff
+ * Group author of buyLand method
+ * Nicholas Holmes author of feedPeople method
  */
 public class CropControl {    
 // The buyLand method
@@ -43,4 +44,38 @@ public class CropControl {
         //return acresOwned
         return owned;
     }
+    
+/**
+* The feedPeople method
+* Purpose: Set aside wheat to feed the people
+* @param wheatToFeed the number of bushels of wheat to set aside to feed the people
+* @param cropData reference to a CropData cropData object
+* @return bushels of wheat in store 
+* Pre-conditions: bushels of wheat to set aside must be >= zero
+* and >= bushels of wheat in store 
+**/
+
+    public static int feedPeople(int wheatToFeed, CropData cropData){
+        //if wheatToFeed < 0, return -1
+        if (wheatToFeed < 0)
+            return -1;
+        
+        //if wheatToFeed > wheatInStore, return -1
+        int _wheatInStore = cropData.getWheatInStore();
+        if (wheatToFeed > _wheatInStore)
+            return -1;
+               
+        //wheatInStore = wheatInStore – wheatToFeed
+        _wheatInStore -= wheatToFeed;
+        cropData.setWheatInStore(_wheatInStore);
+        
+        //wheatForFood = wheatForFood + wheatToFeed
+        int _wheatForFood = cropData.getWheatForFood();
+        _wheatForFood += wheatToFeed;
+        cropData.setWheatForFood(_wheatForFood);
+        
+        //return wheatInStore
+        return _wheatInStore;
+    }
+
 }
