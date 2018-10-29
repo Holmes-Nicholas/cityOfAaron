@@ -116,5 +116,38 @@ public class CropControl {
         //return acresPlanted
         return acresPlanted;  
     } 
+    /**
+// The setOffering method
+* Purpose: To set aside a percentage of the harvest for offering
+* @param harvest amount of the harvest
+* @param offering percentage desired for offering
+* @param cropData reference to a CropData object
+* @return the amount of the offering
+* Pre-conditions: offering must be > 0 
+* and < 100 
+*/
+    public static int setOffering(int harvest, int offering, CropData cropData){
+        
+//if harvest is <= 0, return 0
+    if (harvest <= 0)
+        return 0;  
+    
+//if offering is <=0, return -1
+   
+    if (offering<=0)
+        return -1;
+    
+//if offering is >=100, return -1
+    if (offering >=100)
+        return -1;
+//offering = harvest*setOffering
+     
+    cropData.setOffering(offering*harvest);    
+     
+//HarvestAfterOffering=harvest-offering
+        var harvestAfterOffering = cropData.harvestAfterOffering();
+//return HarvestAfterOffering
+    return harvestAfterOffering;
 
+    }
 }

@@ -25,6 +25,7 @@ public class CropData {
     private int harvest;
     private int wheatForFood;
     private int acresPlanted;
+    public int setOffering;
     
     //setters for instance fields
     public void setYear(int _year){
@@ -88,5 +89,21 @@ public class CropData {
     }
     public int getAcresPlanted(){
         return acresPlanted;
+    }
+
+    public void getOffering() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setOffering(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int harvestAfterOffering() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setOffering(double d) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
