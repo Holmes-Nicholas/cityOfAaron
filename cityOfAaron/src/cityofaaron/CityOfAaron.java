@@ -1,25 +1,46 @@
 /*
- * The main() class file for the cityOfAaron project
+ * The City of Aaron Game
  * CIT-260
  * Fall 2018
  * Team members: Nicholas Holmes, David Nielson, Jared Goff
  */
 package cityofaaron;
 import model.*;
+import view.*;
 
 /**
  *@author aaowgne (Dave Nielson)
  * @author jgoff
  * @author Holmes-Nicholas
  */
-public class CityOfAaron {
-
+public class CityOfAaron 
+{
+    // variable for keeping a reference to the Game object
+    private static Game theGame = null;
+    
+    //setter for Game object
+        public static void setGame(Game game)
+        {   
+        theGame = game;
+        }
+    
+        //getter for Game object
+        public Game getGame()
+        {
+        return theGame;
+        }
+        
     /**
+     * main function - entry point for the program
+     * runs the main menu
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenuView();              
+
         //create player1 and set name to Joe
         Player player1 = new Player();
         player1.setName("Joe");

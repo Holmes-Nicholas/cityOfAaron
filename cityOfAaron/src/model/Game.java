@@ -13,20 +13,35 @@ package model;
 public class Game {
     
     // Attributes
-    private Player thePlayer;
+    private Player thePlayer;    
+    private CropData cropData;
     
     //Constructor
     public Game()
-    {}
+    {
+        
+    }
     
     //Functions
     public void setPlayer(Player _player)
     {
         thePlayer = _player;
     }
+    
     public Player getPlayer()
     {
         return thePlayer;
     }
-     
+
+    //setter for CropData object
+    public void setCropData(CropData _cropData)
+    {
+        cropData = _cropData;
+    }
+    
+    //getter for CropData object
+    public CropData getCropData()
+    {
+        return cropData;
+    }
 }
