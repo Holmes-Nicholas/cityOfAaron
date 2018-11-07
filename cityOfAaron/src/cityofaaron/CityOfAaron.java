@@ -7,6 +7,7 @@
 package cityofaaron;
 import model.*;
 import view.*;
+import Control.*;
 
 /**
  *@author aaowgne (Dave Nielson)
@@ -25,7 +26,7 @@ public class CityOfAaron
         }
     
         //getter for Game object
-        public Game getGame()
+        public static Game getGame()
         {
         return theGame;
         }

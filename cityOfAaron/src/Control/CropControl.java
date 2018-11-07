@@ -6,6 +6,9 @@
 package Control;
 
 import model.CropData;
+import java.util.Random;
+
+
 
 
 /**
@@ -150,4 +153,16 @@ public class CropControl {
     return harvestAfterOffering;
 
     }
+    // calcLandCost() method
+    // Purpose: Calculate a random land cost between 17 and 26 bushels/acre
+    // Parameters: none
+    // Returns: the land cost
+    private static Random random = new Random();
+    public static int calcLandCost()
+    {        
+      int landPrice = random.nextInt(LAND_RANGE) + LAND_BASE;  
+      return landPrice;            
+    }
+
 }
+
