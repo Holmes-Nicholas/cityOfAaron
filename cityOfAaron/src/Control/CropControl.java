@@ -8,15 +8,20 @@ package Control;
 import model.CropData;
 import java.util.Random;
 
-
-
-
 /**
  *
  * Group author of buyLand method
  * Nicholas Holmes author of feedPeople method
  */
-public class CropControl {    
+public class CropControl 
+{
+// constants
+private static final int LAND_BASE = 17;
+private static final int LAND_RANGE = 10;  
+
+// random number generator
+private static Random random = new Random();
+    
 // The buyLand method
 // Purpose: To buy land
 // Parameters: the price of land, the number of acres to buy, 
@@ -131,25 +136,24 @@ public class CropControl {
 */
     public static int setOffering(int harvest, int offering, CropData cropData){
         
-//if harvest is <= 0, return 0
+    //if harvest is <= 0, return 0
     if (harvest <= 0)
         return 0;  
     
-//if offering is <=0, return -1
-   
+    //if offering is <=0, return -1
     if (offering<=0)
         return -1;
     
-//if offering is >=100, return -1
+    //if offering is >=100, return -1
     if (offering >=100)
         return -1;
-//offering = harvest*setOffering
-     
+    
+    //offering = harvest*setOffering
     cropData.setOffering(offering*harvest);    
      
-//HarvestAfterOffering=harvest-offering
-        var harvestAfterOffering = cropData.harvestAfterOffering();
-//return HarvestAfterOffering
+    //HarvestAfterOffering=harvest-offering
+    var harvestAfterOffering = cropData.harvestAfterOffering();
+    //return HarvestAfterOffering
     return harvestAfterOffering;
 
     }
@@ -157,7 +161,6 @@ public class CropControl {
     // Purpose: Calculate a random land cost between 17 and 26 bushels/acre
     // Parameters: none
     // Returns: the land cost
-    private static Random random = new Random();
     public static int calcLandCost()
     {        
       int landPrice = random.nextInt(LAND_RANGE) + LAND_BASE;  
