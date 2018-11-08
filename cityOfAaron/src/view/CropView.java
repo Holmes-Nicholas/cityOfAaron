@@ -1,7 +1,7 @@
 // The CropView class - part of the view layer
 // Object of this class manages the main menu
 // Author: Nicholas Holmes , David Nielson, Jared Goff
-// Date last modified: Nov 3 2018
+// Date last modified: Nov 7 2018
 //-------------------------------------------------------------
 package view;
 
@@ -48,6 +48,7 @@ public class CropView {
     // Purpose: interface with the user input for setting wheat aside for feeding people 
     // Parameters: none
     // Returns: none
+    // Author: Nicholas Holmes
     public static void feedPeopleView()
     {       
         // Prompt the user to enter the number of bushels of grain to set aside
