@@ -20,7 +20,7 @@ public class MainMenuView
 
   // The displayMenuView method
   // Purpose: displays the menu, gets the user's input, and does the 
-  //               selected action
+  // selected action
   // Parameters: none
   // Returns: none
   // =========================================================    
