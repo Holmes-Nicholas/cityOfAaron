@@ -166,6 +166,36 @@ private static Random random = new Random();
       int landPrice = random.nextInt(LAND_RANGE) + LAND_BASE;  
       return landPrice;            
     }
-
+    private static int landPrice;
+    
+    // sellLand method
+    // Purpose: Sell land  - subtracts from the acres owned
+    // Parameters: the price of land, the number of acres to sell, and
+    //     a reference to a CropData object 
+    // Pre-conditions: acresToSell >= 0 and acresToSell <= acresOwned
+    // Returns: the number of acres owned after the sale
+ public static int sellLand(int price, int acresToSell, CropData cropData)
+    {
+          //if acresToSell < 0, return -1
+          if(acresToSell < 0)
+              return -1;
+        
+         //if acresToSell > acresOwned, return -1
+        int owned = cropData.getAcresOwned();
+        if(acresToSell > owned)
+             return -1;
+                //acresOwned = acresOwned - acresToSell
+        owned -= acresToSell;
+        cropData.setAcresOwned(owned);
+        
+        //wheatInStore = wheatInStore + (acresToBuy x landPrice)
+        int wheat = cropData.getWheatInStore();
+        wheat+= (acresToSell * landPrice);
+        cropData.setWheatInStore(wheat);
+        
+        //return acresOwned
+        return owned;
+    }
+    
 }
 

@@ -101,5 +101,26 @@ public class CropView {
         // add calls to the other crop view methods
         // as they are written
         feedPeopleView( );
+        
+    }
+    public static void sellLandView()
+    {
+        // Get the cost of land for this round.
+        int price = CropControl.calcLandCost();
+
+        // Prompt the user to enter the number of acres to sell
+        System.out.format("Land is selling for %d bushels per acre.%n",price);
+        System.out.print("\nHow many acres of land do you wish to sell? "); 
+
+        //  Get the user’s input and save it.
+        int toSell;
+        toSell = keyboard.nextInt();
+
+        // Call the sellLand( ) method in the control layer to buy the land
+        int sellLand = CropControl.sellLand(price, toSell, cropData);
+    
+        // output how much land we now own
+        System.out.format("You now own %d acres of land. ", cropData.getAcresOwned());
     }
 }
+
