@@ -67,6 +67,27 @@ public class CropView {
         System.out.format("You now have %d bushels of grain set aside to feed people. ", cropData.getWheatForFood());
         System.out.format("\nYou now have %d bushels of grain left in storage. ", cropData.getWheatInStore());
     }
+    
+    //plantCropsView method()
+    //Purpose: interface with the user input for planting crops
+    //Parameters: none
+    //Returns: None
+    //Author: Jared Goff
+    public static void plantCropsView()
+    {
+        // Prompt the user to enter the acres of land to plant
+        System.out.print("\nHow many acres of land do you want to plant? ");
+        
+        // Get the user’s input and save it.
+        int acresToPlant;
+        acresToPlant = keyboard.nextInt();
+        
+        // Call the plantCrops() method in the control layer to plant the crops
+        CropControl.plantCrops(acresToPlant, cropData);
+        
+        //output The number of bushels that are left in store
+        System.out.format("You now have planted %d aces of land.\n", cropData.getAcresPlanted());
+    }
 
     // The runCropView method()
     // Purpose: runs the methods to manage the crops game
