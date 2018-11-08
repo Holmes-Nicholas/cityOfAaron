@@ -168,6 +168,10 @@ public class MainMenuView
     public void displayHelpMenuView()
     {
       System.out.println("\nHelp Menu selected.");
+        // this shows the help menu
+     HelpMenuView hmv = new HelpMenuView();
+     hmv.displayMenuView();
+
     }
     
     // The displaySaveGameView method
