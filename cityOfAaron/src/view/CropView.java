@@ -1,8 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// The CropView class - part of the view layer
+// Object of this class manages the main menu
+// Author: Nicholas Holmes , David Nielson, Jared Goff
+// Date last modified: Nov 3 2018
+//-------------------------------------------------------------
 package view;
 
 //import Control.CropControl;
@@ -11,10 +11,6 @@ import Control.*;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 
-/**
- *
- * @author jgoff
- */
 public class CropView {
     
     // Create a Scanner object
@@ -47,6 +43,29 @@ public class CropView {
         // output how much land we now own
         System.out.format("You now own %d acres of land. ", cropData.getAcresOwned());
     }
+    
+    // The feedPeopleView method()
+    // Purpose: interface with the user input for setting wheat aside for feeding people 
+    // Parameters: none
+    // Returns: none
+    public static void feedPeopleView()
+    {       
+        // Prompt the user to enter the number of bushels of grain to set aside
+        System.out.print("\nHow many bushels of grain do you want to set aside to feed the people? "); 
+
+        //  Get the user’s input and save it.
+        int wheatToFeed;
+        wheatToFeed = keyboard.nextInt();
+
+        // Call the feedPeople() method in the control layer to set aside the wheat
+        CropControl.feedPeople(wheatToFeed, cropData);
+        //CropData = null cropData;
+    
+        // output how much wheat we now have set aside to feed people and
+        // how much is left in storage
+        System.out.format("You now have %d bushels of grain set aside to feed people. ", cropData.getWheatForFood());
+        System.out.format("\nYou now have %d bushels of grain left in storage. ", cropData.getWheatInStore());
+    }
 
     // The runCropView method()
     // Purpose: runs the methods to manage the crops game
@@ -59,5 +78,6 @@ public class CropView {
 
         // add calls to the other crop view methods
         // as they are written
+        feedPeopleView( );
     }
 }

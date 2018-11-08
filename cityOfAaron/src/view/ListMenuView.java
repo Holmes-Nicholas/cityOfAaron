@@ -61,7 +61,7 @@ public class ListMenuView
           " 2 - List or view the tools in the storehouse\n" +
           " 3 - List or view the provisions in the storehouse\n" +
           " 4 - List or view the developers of this game\n" +
-          " 5 - Quit\n";
+          " 5 - Back to the Game Menu\n";
         
      max = 5;
   }
@@ -122,9 +122,9 @@ public class ListMenuView
           listTeam();
           break;
 
-        // if the option is 5, display a goodbye message
+        // if the option is 5, return to game menu
         case 5:
-          System.out.println("Thanks for looking at the List Menu ... goodbye.");
+          return;
       } 
     }
     
