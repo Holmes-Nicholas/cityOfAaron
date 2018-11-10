@@ -102,6 +102,9 @@ public class CropView {
         // as they are written
         feedPeopleView( );
         
+        //call the sellLandView
+        sellLandView( );
+        
     }
     public static void sellLandView()
     {
