@@ -21,7 +21,7 @@ public class CropControlTest5 {
 
     /**
      * Test of buyLand method, of class CropControl.
-     * Test Case 1
+     * Test Case 5
      */
     
     @Test
