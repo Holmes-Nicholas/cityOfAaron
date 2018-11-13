@@ -39,12 +39,12 @@ public class CropControlPlantCropsTest {
     @Test
     public void testPlantCropstest2() {
         System.out.println("plantCrops Test2");
-        int acresPlanted = 100;
+        int acresPlanted = 200;
         CropData cropData = new CropData();
         cropData.setWheatInStore(50);
         cropData.setAcresOwned(200);
         cropData.setPopulation(20);
-        int expResult = 100;
+        int expResult = -1;
         int result = CropControl.plantCrops(acresPlanted, cropData);
         assertEquals(expResult, result);
     }    

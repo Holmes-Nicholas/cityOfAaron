@@ -8,6 +8,7 @@ package view;
 
 import Control.GameControl;
 import java.util.Scanner;
+import cityofaaron.CityOfAaron;
 
 public class GameMenuView
 {
@@ -15,6 +16,33 @@ public class GameMenuView
   
   private String theMenu;
   private int max;
+  
+  //The GameMenuView Method
+  //Purpose: Open GameMethodView
+  //Parameters: none
+  //Parameters: none
+  
+  
+   public void displayMenuView()
+    {
+        int menuOption;
+        do
+        {
+            // Display the menu
+            System.out.println(theMenu);
+            
+            // Prompt the user and get the user’s input
+            menuOption=getMenuOption();
+            
+            // Perform the desired action
+             doAction(menuOption);
+        } while (menuOption != max);
+
+    }
+    //The Game MenuView constructor
+    //purpose: Intialize the game menu
+    //Parameters: none
+    //returns: none   
 
   public GameMenuView()
   {
@@ -36,7 +64,7 @@ public class GameMenuView
     // Parameters: none
     // Returns: integer - the option selected
     // ===================================       
-    public int getGameOption()
+    public int getMenuOption()
     {
        // declare a variable to hold user’s input
        int userInput = 0;
@@ -93,7 +121,8 @@ public class GameMenuView
           
       } 
     }
-    
+
+
     // The viewMap method
     // Purpose: viewMap
     // Parameters: none
@@ -126,12 +155,12 @@ public class GameMenuView
     }
     
     // The manageCrops method
-    // Purpose: displays the manageCrops menu 
+    // Purpose: run the plantCrops View
     // Parameters: none
     // Returns: none
     // ===================================     
     public void manageCrops()
     {
-      System.out.println("\nManageCrops.");
-    }   
+      CropView.runCropView();
+    }    
 }
