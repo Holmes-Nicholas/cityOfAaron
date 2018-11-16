@@ -1,7 +1,7 @@
 // The ListMenuView class - part of the view layer
 // Object of this class manages the List menu
 // Author: Nicholas Holmes
-// Date last modified: Nov 7 2018
+// Date last modified: Nov 16 2018
 //-------------------------------------------------------------
 
 package view;
@@ -15,45 +15,17 @@ import cityofaaron.CityOfAaron;
  *
  * @author Nicholas Holmes
  */
-public class ListMenuView 
-{
-  Scanner keyboard = new Scanner(System.in);
-  
-  private String listMenu;
-  private int max;
-
-
-  // The displayMenuView method
-  // Purpose: displays the menu, gets the user's input, and does the 
-  // selected action
-  // Parameters: none
-  // Returns: none
-  // =========================================================    
-  public void displayMenuView()
-  {
-    int menuOption;
-    do
+//Added 'extends MenuView' so the class inherits from MenuView 11.16.18 NH
+public class ListMenuView extends MenuView
+{ 
+    // The ListMenuView constructor
+    // Purpose: Initialize the menu data
+    // Parameters: none
+    // Returns: none
+    // ===================================
+    public ListMenuView()
     {
-        // Display the menu
-        System.out.println(listMenu);
-
-        // Prompt the user and get the user’s input
-        menuOption = getMenuOption();
-
-        // Perform the desired action
-        doAction(menuOption);
-
-    } while (menuOption != max);
-  }
-  
-// The ListMenuView constructor
-// Purpose: Initialize the menu data
-// Parameters: none
-// Returns: none
-// ===================================
-  public ListMenuView()
-  {
-     listMenu = "\n" +
+        super("\n" + //'super' calls the base class constructor 11.16.18 NH
           "**********************************\n" +
           "* CITY OF AARON: VIEW/PRINT LIST MENU  *\n" +
           "**********************************\n" +
@@ -61,44 +33,19 @@ public class ListMenuView
           " 2 - List or view the tools in the storehouse\n" +
           " 3 - List or view the provisions in the storehouse\n" +
           " 4 - List or view the developers of this game\n" +
-          " 5 - Back to the Game Menu\n";
+          " 5 - Back to the Game Menu\n",
         
-     max = 5;
-  }
-  
-    // The getMenuOption method  
-    // Purpose: gets the user's input
-    // Parameters: none
-    // Returns: integer - the option selected
-    // ===================================       
-    public int getMenuOption()
-    {
-       // declare a variable to hold user’s input
-       int userInput = 0;
-       final int MAX = 5;
-       Scanner keyboard = new Scanner(System.in);
-
-       // begin loop
-       do
-       {
-            // get user input from the keyboard
-            userInput = keyboard.nextInt();
-            // if it is not a valid value, output an error message
-            if(userInput < 1 || userInput > MAX)
-                System.out.println("Error: you must select 1, 2, 3, 4, or 5");
-            // loop back to the top of the loop if input was not valid
-        // end loop
-        } while (userInput < 1 || userInput > MAX);
-       
-       return userInput;
+        5);
     }
-    
+  
     // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
     // Returns: none
     // ===================================       
-    public void doAction(int option)
+    
+    //added '@Override' to override the method declared in ViewInterface 11.16.18 NH
+    @Override public void doAction(int option)
     {
       switch(option)
       {

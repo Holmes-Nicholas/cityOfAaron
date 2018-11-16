@@ -143,7 +143,7 @@ public class GameMenuView
     {
       System.out.println("\nView the list.");
      ListMenuView lmv = new ListMenuView();
-     lmv.displayMenuView();
+     lmv.displayMenu(); //changed from displayMenuView to displayMenu 11.16.18 NH
     }
     
     // The moveToNewLocation method
