@@ -10,37 +10,9 @@ import Control.GameControl;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 
-public class MainMenuView
-{
-  Scanner keyboard = new Scanner(System.in);
-  
-  private String theMenu;
-  private int max;
-
-
-  // The displayMenuView method
-  // Purpose: displays the menu, gets the user's input, and does the 
-  // selected action
-  // Parameters: none
-  // Returns: none
-  // =========================================================    
-  public void displayMenuView()
-  {
-    int menuOption;
-    do
-    {
-        // Display the menu
-        System.out.println(theMenu);
-
-        // Prompt the user and get the user’s input
-        menuOption = getMenuOption();
-
-        // Perform the desired action
-        doAction(menuOption);
-
-    } while (menuOption != max);
-  }
-  
+//Keyword extends means that this class inherits from MenuView
+public class MainMenuView extends MenuView
+{    
 // The MainMenuView constructor
 // Purpose: Initialize the menu data
 // Parameters: none
@@ -48,7 +20,7 @@ public class MainMenuView
 // ===================================
   public MainMenuView()
   {
-     theMenu = "\n" +
+     super("\n" + //super calls the base class constuctor
           "**********************************\n" +
           "* CITY OF AARON: MAIN GAME MENU  *\n" +
           "**********************************\n" +
@@ -56,44 +28,18 @@ public class MainMenuView
           " 2 - Get and start a saved game\n" +
           " 3 - Get help on playing the game\n" +
           " 4 - Save game\n" +
-          " 5 - Quit\n";
-        
-     max = 5;
-  }
+          " 5 - Quit\n",        
+      5);
+  } 
   
-    // The getMenuOption method  
-    // Purpose: gets the user's input
-    // Parameters: none
-    // Returns: integer - the option selected
-    // ===================================       
-    public int getMenuOption()
-    {
-       // declare a variable to hold user’s input
-       int userInput = 0;
-       final int MAX = 5;
-       Scanner keyboard = new Scanner(System.in);
-
-       // begin loop
-       do
-       {
-            // get user input from the keyboard
-            userInput = keyboard.nextInt();
-            // if it is not a valid value, output an error message
-            if(userInput < 1 || userInput > MAX)
-                System.out.println("Error: you must select 1, 2, 3, 4, or 5");
-            // loop back to the top of the loop if input was not valid
-        // end loop
-        } while (userInput < 1 || userInput > MAX);
-       
-       return userInput;
-    }
-    
     // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
     // Returns: none
-    // ===================================       
-    public void doAction(int option)
+    // ===================================  
+  
+    //This Overrides the method declared in ViewInterface
+    @Override public void doAction(int option) 
     {
       switch(option)
       {
@@ -130,8 +76,7 @@ public class MainMenuView
     // ===================================     
     public void startNewGame()
     {
-    // System.out.println("\nStart new game option selected.");
-        
+           
     // Display the Banner Page.
     System.out.println("\nWelcome to BE MORE CREATIVE the city of Aaron.");
    
@@ -139,6 +84,7 @@ public class MainMenuView
     String name;
     System.out.println("\nPlease type in your first name: ");
     name = keyboard.next();
+    
 
     // Call the createNewGame() method in the GameControl class
     GameControl.createNewGame(name);
@@ -147,6 +93,8 @@ public class MainMenuView
     System.out.println("Welcome " + name + " have fun!!!");
 
     // Display the Game menu
+    GameMenuView gmv = new GameMenuView();
+    gmv.displayMenuView();
   
     }
     

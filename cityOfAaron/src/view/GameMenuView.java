@@ -53,7 +53,7 @@ public class GameMenuView
           " 1 - viewMap\n" +
           " 2 - viewList\n" +
           " 3 - moveToNewLocation\n" +
-          " 4 - mangerCrops\n" +
+          " 4 - manageCrops\n" +
           " 5 - Quit\n";
         
      max = 5;

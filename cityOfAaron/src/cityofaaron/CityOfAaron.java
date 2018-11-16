@@ -40,7 +40,7 @@ public class CityOfAaron
         // TODO code application logic here
         
         MainMenuView mmv = new MainMenuView();
-        mmv.displayMenuView();              
+        mmv.displayMenu();              
 
         //create player1 and set name to Joe
         Player player1 = new Player();
