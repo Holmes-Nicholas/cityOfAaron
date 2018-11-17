@@ -1,7 +1,7 @@
 // The HelpMenuView class - part of the view layer
 // Object of this class manages the help menu
 // Author: David Nielson
-// Date last modified: Nov 7 2018
+// Date last modified: Nov 17 2018
 //-------------------------------------------------------------
 package view;
 
@@ -9,36 +9,9 @@ import Control.GameControl;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 
-public class HelpMenuView 
+public class HelpMenuView extends MenuView
 {
-    Scanner keyboard = new Scanner(System.in);
-  
-  private String theMenu;
-  private int max;
-    
-  
-  // The displayMenuView method
-  // Purpose: displays the menu, gets the user's input, and does the 
-  //               selected action
-  // Parameters: none
-  // Returns: none
-  // =========================================================    
-  public void displayMenuView()
-  {
-    int menuOption;
-    do
-    {
-        // Display the menu
-        System.out.println(theMenu);
-
-        // Prompt the user and get the user’s input
-        menuOption = getMenuOption();
-
-        // Perform the desired action
-        doAction(menuOption);
-
-    } while (menuOption != max);
-  }
+   
   // The HelpMenuView constructor
   // Purpose: Initialize the help menu data
   // Parameters: none
@@ -46,7 +19,7 @@ public class HelpMenuView
   // ===================================
   public HelpMenuView()
   {
-     theMenu = "\n" +
+     super("\n" + //'super' calls the base class constructor
           "**********************************\n" +
           "* CITY OF AARON: HELP MENU  *\n" +
           "**********************************\n" +
@@ -55,41 +28,17 @@ public class HelpMenuView
           " 3 - How do I view the map?\n" +
           " 4 - How do I move to another location\n" +
           " 5 - How do I display a list of animals, provisions and tools in the city storehouse?\n" +
-          " 6 - Back to the Main Menu\n";
+          " 6 - Back to the Main Menu\n",
         
-     max = 6;
+      6);
   }
-  // The getMenuOption method  
-    // Purpose: gets the user's input
-    // Parameters: none
-    // Returns: integer - the option selected
-    // ===================================       
-    public int getMenuOption()
-    {
-       // declare a variable to hold user’s input
-       int userInput = 0;
-       final int MAX = 6;
-       Scanner keyboard = new Scanner(System.in);
-
-       // begin loop
-       do
-       {
-            // get user input from the keyboard
-            userInput = keyboard.nextInt();
-            // if it is not a valid value, output an error message
-            if(userInput < 1 || userInput > MAX)
-                System.out.println("Error: you must select 1, 2, 3, 4, 5, or 6");
-            // loop back to the top of the loop if input was not valid
-        // end loop
-        } while (userInput < 1 || userInput > MAX);
-       
-       return userInput;
-    }
+  
     // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
     // Returns: none
     // ===================================       
+    @Override
     public void doAction(int option)
     {
       switch(option)

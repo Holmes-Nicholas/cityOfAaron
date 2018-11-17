@@ -24,7 +24,7 @@ public class HelpMenuViewTest {
     public void testDisplayMenuView() {
         System.out.println("displayMenuView");
         HelpMenuView instance = new HelpMenuView();
-        instance.displayMenuView();
+        instance.displayMenu();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
