@@ -15,6 +15,7 @@ public class Game {
     // Attributes
     private Player thePlayer;    
     private CropData cropData;
+    private Map map;
     
     //Constructor
     public Game()
@@ -43,5 +44,18 @@ public class Game {
     public CropData getCropData()
     {
         return cropData;
+    }
+
+    
+    
+    public void setMap(Map theMap) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    map = theMap;
+    }
+    
+    //getter for Map object
+    public Map getMap()
+    {
+        return map;
     }
 }

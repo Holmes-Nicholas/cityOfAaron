@@ -9,6 +9,9 @@ package view;
 import Control.GameControl;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
+import model.CropData;
+import model.Game;
+import model.Map;
 
 /**
  *
@@ -16,7 +19,10 @@ import cityofaaron.CityOfAaron;
  */
     //Added extends MenuView so it will inherit from MenuView.
 public class GameMenuView extends MenuView
+
 {
+    private static Game game = CityOfAaron.getGame();
+    private static Map map = game.getMap();
     //The Game MenuView constructor
     //purpose: Intialize the game menu
     //Parameters: none
@@ -82,9 +88,13 @@ public class GameMenuView extends MenuView
     // ===================================     
       private void viewMap()
       {
-          System.out.println("nView the map");
-  
-    }
+         // System.out.println("\nView the map");
+          // Call the createMap() method in the GameControl class
+         // MapView mv = new MapView();
+         // mv.displayMenu(); 
+         // System.out.println("\nview the map " + player1.getName());
+     System.out.format("\nView the map." + game.getMap());
+      }
     
     // The viewList method
     // Purpose: viewList
