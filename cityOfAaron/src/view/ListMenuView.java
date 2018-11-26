@@ -10,6 +10,7 @@ import model.*;
 import Control.*;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
+import java.util.ArrayList;
 
 /**
  *
@@ -105,7 +106,15 @@ public class ListMenuView extends MenuView
     // ===================================     
     public void listProvisions()
     {
-      System.out.println("\nList or view the provisions in the storehouse selected.");
+      //System.out.println("\nList or view the provisions in the storehouse selected.");
+      Game theGame = CityOfAaron.getGame();
+      ArrayList<ListItem> provisions = theGame.getProvisions();
+
+      System.out.format("%-16s%-24s\n", "Provisions", "Quantity");
+      provisions.forEach((provision) -> {
+          System.out.format("%-16s%-24s\n", provision.getName(), provision.getNumber());
+        });
+      
     }
     
     // The listTeam method

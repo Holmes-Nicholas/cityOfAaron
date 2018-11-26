@@ -6,6 +6,7 @@
 package Control;
 import model.*;
 import cityofaaron.CityOfAaron;
+import java.util.ArrayList;
 
 
 /**
@@ -33,27 +34,7 @@ public class GameControl
     game.setPlayer(player);
     // Call the createNewGame() method in the GameControl class
     createMap();
-/*
-    // Create a CropData object
-    CropData cropData = new CropData();
-    
-    // Initialize the data values in the CropData object
-    cropData.setYear(0);
-    cropData.setPopulation(100);
-    cropData.setNewPeople(5);
-    cropData.setCropYield(3);
-    cropData.setNumberWhoDied(0);
-    cropData.setWheatInStore(2700);
-    cropData.setAcresOwned(1000);
-    cropData.setAcresPlanted(1000);
-    cropData.setHarvest(3000);
-    cropData.setAcresPlanted(1000);
-    //cropData.setOffering(300);
-    
-    // Save a reference to the CropData object in the Game object
-    game.setCropData(cropData);
- */   
-    // Save a reference to the Game object in the static variable
+
     CityOfAaron.setGame(game);
   
 }
@@ -221,7 +202,23 @@ public class GameControl
         }
         game.setMap(theMap); 
     }
-
-  
+    
+    // The createProvisionsList method
+    // Purpose: creates the list of provisions
+    // Parameters: none
+    // Returns: none
+    public static void createProvisionsList()   
+    {
+        ArrayList<ListItem> provisions = new ArrayList<>();
+        
+        provisions.add(new ListItem("Water", 212));
+        provisions.add(new ListItem("Bandaids", 50));
+        provisions.add(new ListItem("Scriptures", 75));
+        provisions.add(new ListItem("Shoes", 30));
+        provisions.add(new ListItem("Hats", 20));
+        
+        game.setProvisions(provisions);
+        
+    }
 
 }

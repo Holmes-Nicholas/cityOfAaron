@@ -65,13 +65,13 @@ public class CityOfAaron
         
         // ListItem created by Jared Goff
         //Test the ListItem class.  Create arces and setnumber to 100
-        ListItem arces = new ListItem();     
-        arces.setName("arces");
-        arces.setNumber(100);
+        //ListItem arces = new ListItem();     
+   //     arces.setName("arces");
+   //     arces.setNumber(100);
         //display number of arces
-        System.out.format("ListItem name is %s. ListItem number %d\n",
-                arces.getName (),
-                arces.getNumber ());
+   //     System.out.format("ListItem name is %s. ListItem number %d\n",
+   //             arces.getName (),
+   //             arces.getNumber ());
         // Location Data Class by Dave Nielson
         //Test location
         Location earth = new Location();

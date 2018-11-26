@@ -6,6 +6,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author N
@@ -16,6 +18,8 @@ public class Game {
     private Player thePlayer;    
     private CropData cropData;
     private Map map;
+    //private _provisions provisions;
+    private ArrayList<ListItem> provisions;
     
     //Constructor
     public Game()
@@ -57,5 +61,13 @@ public class Game {
     public Map getMap()
     {
         return map;
+    }
+
+    public void setProvisions(ArrayList<ListItem> _provisions) {
+        provisions = new ArrayList<ListItem>(_provisions);
+    }
+    
+    public ArrayList<ListItem> getProvisions(){
+        return provisions;
     }
 }
