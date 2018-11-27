@@ -6,13 +6,16 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author jgoff
  */
-public class ListItem {
-        private String name;
+public class ListItem implements Serializable{
+    private String name;
     private int number;
+
 
    
     public ListItem(String _name, int _number) {
@@ -24,21 +27,24 @@ public class ListItem {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
         
+
+   
+
    
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String _name) {
+        name = _name;
     }
 
     public int getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setNumber(int _number) {
+        number = _number;
     }
 
     

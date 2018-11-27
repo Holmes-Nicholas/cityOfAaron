@@ -7,7 +7,9 @@ package Control;
 import model.*;
 import cityofaaron.CityOfAaron;
 import java.util.ArrayList;
+
 import model.ListItem;
+
 
 
 /**
@@ -33,32 +35,25 @@ public class GameControl
     
     // Store a reference to the Player object in the Game object
     game.setPlayer(player);
-    // Call the createNewGame() method in the GameControl class
+    
+    //create map
     createMap();
+
     createToolList();
     
     
-/*
+
     // Create a CropData object
     CropData cropData = new CropData();
+
+
     
-    // Initialize the data values in the CropData object
-    cropData.setYear(0);
-    cropData.setPopulation(100);
-    cropData.setNewPeople(5);
-    cropData.setCropYield(3);
-    cropData.setNumberWhoDied(0);
-    cropData.setWheatInStore(2700);
-    cropData.setAcresOwned(1000);
-    cropData.setAcresPlanted(1000);
-    cropData.setHarvest(3000);
-    cropData.setAcresPlanted(1000);
-    //cropData.setOffering(300);
+    //create provision list
+    createProvisionList();
     
-    // Save a reference to the CropData object in the Game object
-    game.setCropData(cropData);
- */   
-    // Save a reference to the Game object in the static variable
+    //create animal list Jared
+    createAnimalList();
+
     CityOfAaron.setGame(game);
     
   
@@ -227,6 +222,7 @@ public class GameControl
         }
         game.setMap(theMap); 
     }
+
         //create the array for the tool list from the menu Author Dave Nielson
     public static void createToolList()
     {
@@ -243,5 +239,44 @@ public class GameControl
 
 
   
+
+    
+    // The createProvisionsList method
+    // Purpose: creates the list of provisions
+    // Parameters: none
+    // Returns: none
+    public static void createProvisionList()   
+    {
+        ArrayList<ListItem> provisions = new ArrayList<>();
+        
+        provisions.add(new ListItem("Water", 212));
+        provisions.add(new ListItem("Honey", 100));
+        provisions.add(new ListItem("Bandaids", 50));
+        provisions.add(new ListItem("Scriptures", 75));
+        provisions.add(new ListItem("Shoes", 30));
+        provisions.add(new ListItem("Hats", 20));
+        
+        game.setProvisions(provisions);
+        
+    }
+    // The createAnimalList method Jared
+    // Purpose: creates the list of animals
+    // Parameters: none
+    // Returns: none
+    public static void createAnimalList()   
+    {
+        ArrayList<ListItem> animals = new ArrayList<>();
+        
+        animals.add(new ListItem("Ox", 200));
+        animals.add(new ListItem("Donkey", 50));
+        animals.add(new ListItem("Chicken", 200));
+        animals.add(new ListItem("cow", 500));
+        animals.add(new ListItem("Pig", 100));
+        
+        
+        game.setAnimals(animals);
+        
+    }
+
 
 }

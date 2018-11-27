@@ -6,8 +6,9 @@
 
 package view;
 
-import model.*;
-import Control.*;
+import model.ListItem;
+import model.Game;
+import Control.GameControl;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import java.util.ArrayList;
@@ -76,18 +77,23 @@ public class ListMenuView extends MenuView
       } 
     }
     
-    // The listAnimals method
+    // The listAnimals method Jared
     // Purpose: clists the animals in the storehouse
     // Parameters: none
     // Returns: none
     // ===================================     
     public void listAnimals()
     {
-        // Display the animals in the storehouse
-        System.out.println("\nList or view the animals in the storehouse selected.");
-  
+      // Display the animals in the storehouse
+      System.out.println("\nAnimals in the City of Aaron.");
+      Game theGame = CityOfAaron.getGame();
+      ArrayList<ListItem> animals = theGame.getAnimals();
+
+      System.out.format("%-16s%-24s\n", "Animals", "Quantity");
+      for(ListItem animal : animals){
+      System.out.format("%-16s%-24s\n", animal.getName(), animal.getNumber()); 
+      }
     }
-    
     // The listTools method
     // Purpose: lists the tools in the storehouse.
     // Parameters: none
@@ -115,6 +121,14 @@ public class ListMenuView extends MenuView
     public void listProvisions()
     {
       System.out.println("\nList or view the provisions in the storehouse selected.");
+      Game theGame = CityOfAaron.getGame();
+      ArrayList<ListItem> provisions = theGame.getProvisions();
+
+      System.out.format("%-16s%-24s\n", "Provisions", "Quantity");
+      for(ListItem provision : provisions){
+      System.out.format("%-16s%-24s\n", provision.getName(), provision.getNumber());
+      }
+      
     }
     
     // The listTeam method
