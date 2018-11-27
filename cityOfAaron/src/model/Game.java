@@ -20,6 +20,7 @@ public class Game {
     private Map map;
 
 
+
     private ArrayList<ListItem> tools;
 
     //private _provisions provisions;
@@ -27,6 +28,8 @@ public class Game {
     //private _provisions provisions;
     private ArrayList<ListItem> animals;
  
+
+
     
     //Constructor
     public Game()
@@ -71,6 +74,7 @@ public class Game {
     }
 
 
+
     
     //setter and getter for the tool array by Dave Nielson
     public void setTools(ArrayList<ListItem> _tools) {
@@ -101,3 +105,4 @@ public class Game {
 
     
 }
+
