@@ -85,7 +85,7 @@ public class ListMenuView extends MenuView
     public void listAnimals()
     {
       // Display the animals in the storehouse
-      //  System.out.println("\nList or view the animals in the storehouse selected.");
+      System.out.println("\nAnimals in the City of Aaron.");
       Game theGame = CityOfAaron.getGame();
       ArrayList<ListItem> animals = theGame.getAnimals();
 
@@ -112,7 +112,7 @@ public class ListMenuView extends MenuView
     // ===================================     
     public void listProvisions()
     {
-      //System.out.println("\nList or view the provisions in the storehouse selected.");
+      System.out.println("\nList or view the provisions in the storehouse selected.");
       Game theGame = CityOfAaron.getGame();
       ArrayList<ListItem> provisions = theGame.getProvisions();
 
