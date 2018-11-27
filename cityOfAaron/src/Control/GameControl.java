@@ -8,7 +8,9 @@ import model.*;
 import cityofaaron.CityOfAaron;
 import java.util.ArrayList;
 
+
 import model.ListItem;
+
 
 
 
@@ -39,12 +41,14 @@ public class GameControl
     //create map
     createMap();
 
+
     createToolList();
     
     
 
     // Create a CropData object
     CropData cropData = new CropData();
+
 
 
     
@@ -223,6 +227,7 @@ public class GameControl
         game.setMap(theMap); 
     }
 
+
         //create the array for the tool list from the menu Author Dave Nielson
     public static void createToolList()
     {
@@ -277,6 +282,10 @@ public class GameControl
         game.setAnimals(animals);
         
     }
+
+
+    
+    
 
 
 }

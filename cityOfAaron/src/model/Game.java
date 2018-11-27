@@ -19,13 +19,14 @@ public class Game {
     private CropData cropData;
     private Map map;
 
+
     private ArrayList<ListItem> tools;
 
     //private _provisions provisions;
     private ArrayList<ListItem> provisions;
     //private _provisions provisions;
     private ArrayList<ListItem> animals;
-
+ 
     
     //Constructor
     public Game()
@@ -69,6 +70,7 @@ public class Game {
         return map;
     }
 
+
     
     //setter and getter for the tool array by Dave Nielson
     public void setTools(ArrayList<ListItem> _tools) {
@@ -93,6 +95,9 @@ public class Game {
     //Get how many animals
     public ArrayList<ListItem> getAnimals(){
         return animals;
-
     }
+
+
+
+    
 }
