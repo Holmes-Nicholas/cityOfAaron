@@ -6,8 +6,9 @@
 
 package view;
 
-import model.*;
-import Control.*;
+import model.ListItem;
+import model.Game;
+import Control.GameControl;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import java.util.ArrayList;
@@ -111,9 +112,9 @@ public class ListMenuView extends MenuView
       ArrayList<ListItem> provisions = theGame.getProvisions();
 
       System.out.format("%-16s%-24s\n", "Provisions", "Quantity");
-      provisions.forEach((provision) -> {
-          System.out.format("%-16s%-24s\n", provision.getName(), provision.getNumber());
-        });
+      for(ListItem provision : provisions){
+      System.out.format("%-16s%-24s\n", provision.getName(), provision.getNumber());
+      }
       
     }
     

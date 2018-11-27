@@ -32,8 +32,12 @@ public class GameControl
     
     // Store a reference to the Player object in the Game object
     game.setPlayer(player);
-    // Call the createNewGame() method in the GameControl class
+    
+    //create map
     createMap();
+    
+    //create provision list
+    createProvisionList();
 
     CityOfAaron.setGame(game);
   
@@ -207,11 +211,12 @@ public class GameControl
     // Purpose: creates the list of provisions
     // Parameters: none
     // Returns: none
-    public static void createProvisionsList()   
+    public static void createProvisionList()   
     {
         ArrayList<ListItem> provisions = new ArrayList<>();
         
         provisions.add(new ListItem("Water", 212));
+        provisions.add(new ListItem("Honey", 100));
         provisions.add(new ListItem("Bandaids", 50));
         provisions.add(new ListItem("Scriptures", 75));
         provisions.add(new ListItem("Shoes", 30));

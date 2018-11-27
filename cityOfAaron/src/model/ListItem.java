@@ -16,10 +16,6 @@ public class ListItem implements Serializable{
     private String name;
     private int number;
 
-   /* public ListItem(){
-        
-        }
-*/
     public ListItem(String _name, int _number) {
         name = _name;
         number = _number;
@@ -29,16 +25,16 @@ public class ListItem implements Serializable{
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String _name) {
+        name = _name;
     }
 
     public int getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setNumber(int _number) {
+        number = _number;
     }
 
     
