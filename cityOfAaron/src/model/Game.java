@@ -20,6 +20,8 @@ public class Game {
     private Map map;
     //private _provisions provisions;
     private ArrayList<ListItem> provisions;
+    //private _provisions provisions;
+    private ArrayList<ListItem> animals;
     
     //Constructor
     public Game()
@@ -69,5 +71,14 @@ public class Game {
     
     public ArrayList<ListItem> getProvisions(){
         return provisions;
+    }
+    //Set how many animals
+    public void setAnimals(ArrayList<ListItem> _animals) {
+        animals = new ArrayList<ListItem>(_animals);
+    }
+    
+    //Get how many animals
+    public ArrayList<ListItem> getAnimals(){
+        return animals;
     }
 }

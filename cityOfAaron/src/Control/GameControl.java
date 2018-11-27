@@ -38,6 +38,9 @@ public class GameControl
     
     //create provision list
     createProvisionList();
+    
+    //create animal list Jared
+    createAnimalList();
 
     CityOfAaron.setGame(game);
   
@@ -223,6 +226,24 @@ public class GameControl
         provisions.add(new ListItem("Hats", 20));
         
         game.setProvisions(provisions);
+        
+    }
+    // The createAnimalList method Jared
+    // Purpose: creates the list of animals
+    // Parameters: none
+    // Returns: none
+    public static void createAnimalList()   
+    {
+        ArrayList<ListItem> animals = new ArrayList<>();
+        
+        animals.add(new ListItem("Ox", 200));
+        animals.add(new ListItem("Donkey", 50));
+        animals.add(new ListItem("Chicken", 200));
+        animals.add(new ListItem("cow", 500));
+        animals.add(new ListItem("Pig", 100));
+        
+        
+        game.setAnimals(animals);
         
     }
 
