@@ -6,6 +6,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author N
@@ -16,6 +18,7 @@ public class Game {
     private Player thePlayer;    
     private CropData cropData;
     private Map map;
+    private ArrayList<ListItem> tools;
     
     //Constructor
     public Game()
@@ -57,5 +60,13 @@ public class Game {
     public Map getMap()
     {
         return map;
+    }
+    
+    //setter and getter for the tool array by Dave Nielson
+    public void setTools(ArrayList<ListItem> _tools) {
+    tools = new ArrayList<ListItem>(_tools);    
+    }
+    public ArrayList<ListItem> getTools(){
+        return tools;
     }
 }

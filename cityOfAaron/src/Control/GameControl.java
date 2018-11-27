@@ -6,6 +6,8 @@
 package Control;
 import model.*;
 import cityofaaron.CityOfAaron;
+import java.util.ArrayList;
+import model.ListItem;
 
 
 /**
@@ -33,6 +35,9 @@ public class GameControl
     game.setPlayer(player);
     // Call the createNewGame() method in the GameControl class
     createMap();
+    createToolList();
+    
+    
 /*
     // Create a CropData object
     CropData cropData = new CropData();
@@ -55,6 +60,7 @@ public class GameControl
  */   
     // Save a reference to the Game object in the static variable
     CityOfAaron.setGame(game);
+    
   
 }
 
@@ -221,6 +227,20 @@ public class GameControl
         }
         game.setMap(theMap); 
     }
+        //create the array for the tool list from the menu Author Dave Nielson
+    public static void createToolList()
+    {
+        ArrayList<ListItem> tools = new ArrayList<>();
+        
+        tools.add(new ListItem("Plows", 22));
+        tools.add(new ListItem("Shovels", 74));
+        tools.add(new ListItem("Hoes", 63));
+        tools.add(new ListItem("Hammers", 32));
+       
+        game.setTools(tools);
+    }
+
+
 
   
 

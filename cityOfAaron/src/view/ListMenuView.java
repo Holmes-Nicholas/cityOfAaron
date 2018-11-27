@@ -10,6 +10,7 @@ import model.*;
 import Control.*;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
+import java.util.ArrayList;
 
 /**
  *
@@ -94,8 +95,16 @@ public class ListMenuView extends MenuView
     // ===================================     
     public void listTools()
     {
-        // Display the tools in the storehouse
-        System.out.println("\nList or view the tools in the storehouse selected.");
+        Game theGame = CityOfAaron.getGame();
+        // Display the tools in the storehouse Author David Nielson
+        ArrayList<ListItem> tools = theGame.getTools();
+        
+        //System.out.println("\nTools in the City of Aaron");
+        System.out.format("%-16s%-24s\n", "Tool", "Quantity");
+        
+        for(ListItem tool : tools) { 
+        System.out.format("%-16s%-24s\n", tool.getName(), tool.getNumber());
+}
     }
     
     // The listProvisions method
@@ -117,5 +126,8 @@ public class ListMenuView extends MenuView
     {
       System.out.println("\nList or view the developers of this game selected.");
     }    
+
+   
+    
     
 }
