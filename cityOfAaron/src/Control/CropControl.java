@@ -175,24 +175,24 @@ private static Random random = new Random();
     //     a reference to a CropData object 
     // Pre-conditions: acresToSell >= 0 and acresToSell <= acresOwned
     // Returns: the number of acres owned after the sale
- public static int sellLand(int price, int acresToSell, CropData cropData)
+ public static int sellLand(int landprice, int acresToSell, CropData cropData) throws CropException
     {
           //if acresToSell < 0, return -1
           if(acresToSell < 0)
-              return -1;
+              throw new CropException("\nA negative value can not be input");
         
          //if acresToSell > acresOwned, return -1
         int owned = cropData.getAcresOwned();
         if(acresToSell > owned)
-             return -1;
+             throw new CropException ("\nYou have insufficient funds for the amount entered");
                 //acresOwned = acresOwned - acresToSell
         owned -= acresToSell;
         cropData.setAcresOwned(owned);
         
         //wheatInStore = wheatInStore + (acresToBuy x landPrice)
-        int wheat = cropData.getWheatInStore();
-        wheat+= (acresToSell * landPrice);
-        cropData.setWheatInStore(wheat);
+        int _wheatInStore = cropData.getWheatInStore();
+        _wheatInStore+= (acresToSell * landPrice);
+        cropData.setWheatInStore(_wheatInStore);
         
         //return acresOwned
         return owned;
