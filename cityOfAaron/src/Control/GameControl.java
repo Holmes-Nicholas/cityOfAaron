@@ -40,7 +40,8 @@ public class GameControl
     //create map
     createMap();
 
-    
+    // create crop data object
+    createCropDataObject();
     
 
     // Create a CropData object

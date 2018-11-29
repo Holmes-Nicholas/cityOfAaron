@@ -7,6 +7,7 @@ package Control;
 
 import model.CropData;
 import java.util.Random;
+import exceptions.*;
 
 /**
  *
@@ -30,15 +31,15 @@ private static Random random = new Random();
 // Pre-conditions: acres to buy must be positive
 // and  wheatInStore >=acresToBuy * landPrice
 
-    public static int buyLand(int landPrice, int acresToBuy, CropData cropData){
+    public static void buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException{
         //if acresToBuy < 0, return -1
         if(acresToBuy < 0)
-            return -1;
+            throw new CropException("A negative value was input");
         
         //if acresToBuy * landPrice is > wheatInStore, return -1
         int _wheatInStore = cropData.getWheatInStore();
         if(acresToBuy * landPrice > _wheatInStore)
-            return -1;
+            throw new CropException("There is insufficient wheat to buy this much land");
             
         //wheatInStore = wheatInStore – (acresToBuy * landPrice)        
         _wheatInStore -= (acresToBuy * landPrice);
@@ -50,7 +51,7 @@ private static Random random = new Random();
         cropData.setAcresOwned(owned);
               
         //return acresOwned
-        return owned;
+        //return owned;
     }
     
 /**
