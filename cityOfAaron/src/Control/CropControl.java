@@ -34,12 +34,12 @@ private static Random random = new Random();
     public static void buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException{
         //if acresToBuy < 0, return -1
         if(acresToBuy < 0)
-            throw new CropException("A negative value was input");
+            throw new CropException("\nA negative value was input");
         
         //if acresToBuy * landPrice is > wheatInStore, return -1
         int _wheatInStore = cropData.getWheatInStore();
         if(acresToBuy * landPrice > _wheatInStore)
-            throw new CropException("There is insufficient wheat to buy this much land");
+            throw new CropException("\nThere is insufficient wheat to buy this much land");
             
         //wheatInStore = wheatInStore – (acresToBuy * landPrice)        
         _wheatInStore -= (acresToBuy * landPrice);
@@ -64,15 +64,15 @@ private static Random random = new Random();
 * and >= bushels of wheat in store 
 **/
 
-    public static int feedPeople(int wheatToFeed, CropData cropData){
+    public static int feedPeople(int wheatToFeed, CropData cropData) throws CropException{
         //if wheatToFeed < 0, return -1
         if (wheatToFeed < 0)
-            return -1;
+            throw new CropException("A negative value was input.");
         
         //if wheatToFeed > wheatInStore, return -1
         int _wheatInStore = cropData.getWheatInStore();
         if (wheatToFeed > _wheatInStore)
-            return -1;
+            throw new CropException("There is insufficient wheat to feed the people.");
                
         //wheatInStore = wheatInStore – wheatToFeed
         _wheatInStore -= wheatToFeed;
