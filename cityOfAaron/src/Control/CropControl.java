@@ -189,7 +189,7 @@ private static Random random = new Random();
         owned -= acresToSell;
         cropData.setAcresOwned(owned);
         
-        //wheatInStore = wheatInStore + (acresToBuy x landPrice)
+        //wheatInStore = wheatInStore + (acresToSell x landPrice)
         int _wheatInStore = cropData.getWheatInStore();
         _wheatInStore+= (acresToSell * landPrice);
         cropData.setWheatInStore(_wheatInStore);
