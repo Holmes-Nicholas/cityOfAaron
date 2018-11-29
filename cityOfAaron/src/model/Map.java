@@ -10,7 +10,9 @@ package model;
  *
  * @author jgoff
  */
-public class Map {
+import java.io.Serializable; 
+
+public class Map implements Serializable {
     
      private int rowCount;           // stores the number of rows 
      private int colCount;           // stores the number of columns
@@ -21,7 +23,7 @@ public class Map {
  // Purpose: Set data members to default values
  // Parameters: none
  // Returns: none
- public Map(){};
+ //public Map(){};
  
  // parameterized Map constructor
  // Purpose: Sets row and column values
