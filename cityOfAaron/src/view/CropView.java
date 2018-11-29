@@ -93,12 +93,6 @@ public class CropView {
             }
         }while(paramsNotOkay);
         
-        //wheatToFeed = keyboard.nextInt();
-
-        // Call the feedPeople() method in the control layer to set aside the wheat
-        //CropControl.feedPeople(wheatToFeed, cropData);
-        //CropData = null cropData;
-    
         // output how much wheat we now have set aside to feed people and
         // how much is left in storage
         System.out.format("\nYou now have %d bushels of grain set aside to feed people. ", cropData.getWheatForFood());
