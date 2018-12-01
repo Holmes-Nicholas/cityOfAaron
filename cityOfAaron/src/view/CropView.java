@@ -103,21 +103,39 @@ public class CropView {
     //Purpose: interface with the user input for planting crops
     //Parameters: none
     //Returns: None
-    //Author: Jared Goff
+    //Author: Jared Goff Try and Catch 11.30.18
     public static void plantCropsView()
-    {
+    {    
+            
         // Prompt the user to enter the acres of land to plant
         System.out.print("\nHow many acres of land do you want to plant? ");
         
         // Get the user’s input and save it.
         int acresToPlant;
+        
+        boolean paramsNotOkay;
+        do {
+            paramsNotOkay = false;
         acresToPlant = keyboard.nextInt();
+        try 
+        {           
         
         // Call the plantCrops() method in the control layer to plant the crops
         CropControl.plantCrops(acresToPlant, cropData);
         
+        // output the amount of wheat left in storage
+        System.out.format("\nYou now have %d wheat in store. ", cropData.getWheatInStore());
+        
         //output The number of bushels that are left in store
-        System.out.format("You now have planted %d aces of land.\n", cropData.getAcresPlanted());
+        System.out.format("\nYou now have planted %d aces of land.", cropData.getAcresPlanted());         
+        }
+        catch(CropException e)
+                {
+                System.out.println("I am sorry master, I cannot do this.");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+                }
+        }while(paramsNotOkay);
     }
 
     // The runCropView method()

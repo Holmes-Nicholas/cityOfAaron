@@ -99,28 +99,30 @@ private static Random random = new Random();
 * @return bushels of wheat in store 
 * Pre-conditions: bushels of wheat to set aside must be >= zero
 * and >= bushels of wheat in store
+* Jgoff updated for exception 12.1.18
 **/
     
-    public static int plantCrops(int acresPlanted, CropData cropData){
+    public static int plantCrops(int acresPlanted, CropData cropData) throws CropException
+    {
         //if acresPlanted <= 0, return -1
         if (acresPlanted <= 0)
-            return -1;
+            throw new CropException("\nA negative value was input");
     
         //if population <= acresPlanted*.1, return -1
         int peoplePerAcre = cropData.getPopulation();
         if(peoplePerAcre <= acresPlanted * .1)
-            return -1;
+            throw new CropException("\nThere is insufficient people to plant this much land");
         
         //if wheatInStore < acresPlanted/2, return -1
         int WheatInStore = cropData.getWheatInStore();
         if (WheatInStore < acresPlanted/2)
-            return -1;
+            throw new CropException("\nThere is insufficient wheat in store to plant this much land");
                
         
         //if acresOwned is <= acresPlanted return -1
         int acresOwned = cropData.getAcresOwned();                
         if (acresOwned <= acresPlanted)
-            return -1;
+            throw new CropException("\nThere is insufficient land to plant this much land");
                
         //return acresPlanted
         return acresPlanted;  
