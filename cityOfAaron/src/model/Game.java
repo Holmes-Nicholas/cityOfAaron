@@ -3,16 +3,27 @@
  * CIT-260
  * Fall 2018
  * Team members: Nicholas Holmes, David Nielson, Jared Goff
+ * Last modified Dec 6 2018
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import exceptions.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+
 
 /**
  *
  * @author N
  */
-public class Game {
+public class Game implements Serializable{
     
     // Attributes
     private Player thePlayer;    

@@ -1,7 +1,7 @@
 // The MainMenuView class - part of the view layer
 // Object of this class manages the main menu
 // Author: Nicholas Holmes , David Nielson, Jared Goff
-// Date last modified: Nov 3 2018
+// Date last modified: Dec 6 2018
 //-------------------------------------------------------------
 
 package view;
@@ -9,6 +9,7 @@ package view;
 import Control.GameControl;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
+import model.Game;
 
 //Keyword extends means that this class inherits from MenuView
 public class MainMenuView extends MenuView
@@ -105,7 +106,19 @@ public class MainMenuView extends MenuView
     // ===================================     
     public void startSavedGame()
     {
-      System.out.println("\nStart saved game option selected.");
+    
+    // prompt user and get a file path      
+    String filepath;    
+    System.out.println("\nEnter the name of the file:");
+    keyboard.nextLine();//This get rid nl character left in the stream
+    filepath = keyboard.nextLine();
+
+    // call the getSavedGame( ) method in the GameControl class to load the game
+    GameControl.getSavedGame(filepath);
+    
+    // display the game menu for the loaded game
+    GameMenuView gmv = new GameMenuView();
+    gmv.displayMenu();
     }
     
     // The displayHelpMenuView method
@@ -115,8 +128,8 @@ public class MainMenuView extends MenuView
     // ===================================     
     public void displayHelpMenuView()
     {
-      System.out.println("\nHelp Menu selected.");
-        // this shows the help menu
+     System.out.println("\nHelp Menu selected.");
+     // this shows the help menu
      HelpMenuView hmv = new HelpMenuView();
      hmv.displayMenu();
 
@@ -129,7 +142,17 @@ public class MainMenuView extends MenuView
     // ===================================     
     public void displaySaveGameView()
     {
-      System.out.println("\nSave Game selected.");
+        
+    //prompt user and get a file path      
+    String filepath;
+    System.out.println("\nEnter the filepath where you want to save the game: ");
+    keyboard.nextLine();//This get rid nl character left in the stream
+    filepath = keyboard.nextLine();    
+   
+    // call the savedGame( ) method in the GameControl class to load the game
+    GameControl.saveGame(filepath);    
+    
+    System.out.println("\nSave game was successful.");    
     }    
     
 }

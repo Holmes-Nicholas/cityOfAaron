@@ -1,7 +1,7 @@
 // The GameMenuView class - part of the view layer
 // Object of this class manages the main menu
 // Author:  Jared Goff
-// Date last modified: Nov 16 2018
+// Date last modified: Dec 6 2018
 //-------------------------------------------------------------
 
 package view;
@@ -21,8 +21,9 @@ import model.Map;
 public class GameMenuView extends MenuView
 
 {
-    private static Game game = CityOfAaron.getGame();
-    private static Map map = game.getMap();
+    // private static Game game = CityOfAaron.getGame();
+    // private static Map map = game.getMap();
+    
     //The Game MenuView constructor
     //purpose: Intialize the game menu
     //Parameters: none
@@ -37,7 +38,7 @@ public class GameMenuView extends MenuView
           " 1 - viewMap\n" +
           " 2 - viewList\n" +
           " 3 - moveToNewLocation\n" +
-          " 4 - manageCrops\n" +
+          " 4 - manageCrops\n" +          
           " 5 - Quit\n",
         
      5);
@@ -71,7 +72,7 @@ public class GameMenuView extends MenuView
         // if the option is 4, manageCrops( )
         case 4: // manageCrops
           manageCrops();
-          break;
+          break;               
 
         // if the option is 5, display a goodbye message
         case 5:
@@ -93,7 +94,7 @@ public class GameMenuView extends MenuView
          // MapView mv = new MapView();
          // mv.displayMenu(); 
          // System.out.println("\nview the map " + player1.getName());
-     System.out.format("\nView the map." + game.getMap());
+     System.out.format("\nView the map.");
       }
     
     // The viewList method
@@ -127,4 +128,5 @@ public class GameMenuView extends MenuView
     {
       CropView.runCropView();
     }    
+     
 }

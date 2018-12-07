@@ -1,13 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// GameContol class - part of the Control layer
+// Author: Nicholas Holmes , David Nielson, Jared Goff
+// Date last modified: Dec 6 2018
+//-------------------------------------------------------------
 package Control;
 import model.*;
 import cityofaaron.CityOfAaron;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import model.ListItem;
+
 
 
 
@@ -24,11 +28,11 @@ public class GameControl
     private static final int MAX_COL = 5;
     
     // Create a new Game object.
-    private static Game game = new Game();
+    private static Game game;// = new Game();
 
   public static void createNewGame(String _name)
   {
-    
+   game = new Game(); 
 
     // Create a new Player object and set the name
     Player player = new Player();
@@ -36,6 +40,7 @@ public class GameControl
     
     // Store a reference to the Player object in the Game object
     game.setPlayer(player);
+    
     
     //create map
     createMap();
@@ -282,8 +287,46 @@ public class GameControl
         game.setAnimals(animals);
         
     }
+    // the getSavedGame method
+    // Purpose: load a saved game from disk
+    // Parameters: the file path
+    // Returns: none
+    // Side Effect: the game reference in the driver is updated
+    public static void getSavedGame(String filepath)
+    {        
+        
+        try (FileInputStream fips = new FileInputStream(filepath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            game = (Game) input.readObject();
+            CityOfAaron.setGame(game);
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error reading the saved game file");
+        }
+    }
 
-
+    // the saveGame method
+    // Purpose: save game to disk
+    // Parameters: the file path
+    // Returns: none
+    // Side Effect: the game reference in the driver is updated
+    public static void saveGame(String filepath)
+    {
+               
+        try (FileOutputStream fops = new FileOutputStream(filepath))
+        {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(game);
+            output.flush();//Clears the stream
+            output.close();//Closes the stream
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error saving the game file");
+        }
+    }
 
     
     
