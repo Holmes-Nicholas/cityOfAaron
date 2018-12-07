@@ -6,11 +6,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author N
  */
-public enum Fruits {
+public enum Fruits implements Serializable{
      // The members of the enumeration
     APPLE("Apple", "red"),
     BANANA("Banana", "yellow"),

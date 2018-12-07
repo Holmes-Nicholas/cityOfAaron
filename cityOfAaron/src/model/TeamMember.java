@@ -6,11 +6,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author N
  */
-public enum TeamMember {
+public enum TeamMember implements Serializable {
     // The members of the enumeration
     NIC("Nic", "The Brick"),
     JARED("Jared", "QB"),

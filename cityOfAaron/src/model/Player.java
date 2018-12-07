@@ -6,12 +6,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author jgoff
  */
-public class Player 
-{
+public class Player implements Serializable {
     //Instance Fields
     private String name;
     
