@@ -84,14 +84,61 @@ public class ListMenuView extends MenuView
     // ===================================     
     public void listAnimals()
     {
+        //menu to view provisions, save list of provisions, or return to previous menu
+        System.out.format("\n" +
+                      "***************************************\n" +
+                      "*    VIEW OR SAVE ANIMALS LIST     *\n" +
+                      "***************************************\n" +
+                      " 1 - View the list of Animals \n" +
+                      " 2 - Save list of Animals to a file \n" +
+                      " 3 - Return to previous menu\n");
+
       // Display the animals in the storehouse
-      System.out.println("\nAnimals in the City of Aaron.");
+      System.out.println("\nSelect an option:");
+      int select = keyboard.nextInt();
+      
       Game theGame = CityOfAaron.getGame();
       ArrayList<ListItem> animals = theGame.getAnimals();
+      
+       //view the Animals list
+        if (select == 1) {
+            System.out.format("%-16s%-24s\n", "Provision", "Quantity");
+            for(ListItem animal : animals) 
+                { 
+                   // View the Provisions in columns
+                   System.out.format("%-16s%-24s\n", animal.getName(), animal.getNumber());
+                }
+            listAnimals();   
+            } 
+        //save list to file
+        else if (select == 2) {
+            String filepath;
+            
+            //ask user to input the filepath
+            System.out.println("\nPlease enter filepath: ");
+            keyboard.nextLine();
+            filepath = keyboard.nextLine();
+            
+            //call method printwriter to save the file
+            GameControl.printWriter(filepath, animals, "Animals");
+            
+            //show again the tools menu
+            listAnimals();
+            
+        } 
+        //return to previous menu
+        else if (select == 3) {
+            ListMenuView lmv = new ListMenuView();
+            lmv.displayMenu();
+        } 
+        //invalid selection
+        else {
+            System.out.print("\nNOT A VALID SELECTION. Enter 1, 2, or 3.\n");
+            listAnimals();
 
-      System.out.format("%-16s%-24s\n", "Animals", "Quantity");
-      for(ListItem animal : animals){
-      System.out.format("%-16s%-24s\n", animal.getName(), animal.getNumber()); 
+      //System.out.format("%-16s%-24s\n", "Animals", "Quantity");
+      //for(ListItem animal : animals){
+      //System.out.format("%-16s%-24s\n", animal.getName(), animal.getNumber()); 
       }
     }
     // The listTools method
