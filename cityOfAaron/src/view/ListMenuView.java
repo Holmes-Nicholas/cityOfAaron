@@ -120,10 +120,10 @@ public class ListMenuView extends MenuView
     // ===================================     
     public void listProvisions()
     {
-        //Show options to show, save or return
+        //men to view provisions, save list of provisions, or return to previous menu
         System.out.format("\n" +
                       "***************************************\n" +
-                      "*      DISPLAY OR PRINT PROVISIONS     *\n" +
+                      "*    VIEW OR SAVE PROVISIONS LIST     *\n" +
                       "***************************************\n" +
                       " 1 - View the list of Provisions \n" +
                       " 2 - Save list of Provisions to a file \n" +
@@ -132,21 +132,20 @@ public class ListMenuView extends MenuView
         System.out.print("\nPlease select an option: ");  
         int select = keyboard.nextInt();
          
-        // List or view the animals in the storehouse
         Game theGame = CityOfAaron.getGame();
         ArrayList<ListItem> provisions = theGame.getProvisions();
         
-         //action 1 - view the list
+         //view the Provisions list
         if (select == 1) {
             System.out.format("%-16s%-24s\n", "Provision", "Quantity");
             for(ListItem provision : provisions) 
                 { 
-                   // List or view the tools in the storehouse
+                   // View the Provisions in columns
                    System.out.format("%-16s%-24s\n", provision.getName(), provision.getNumber());
                 }
-            listTools();   
+            listProvisions();   
             } 
-        //action 2 - save the list
+        //save list to file
         else if (select == 2) {
             String filepath;
             
@@ -162,25 +161,16 @@ public class ListMenuView extends MenuView
             listProvisions();
             
         } 
-        //action 3 - return to previous menu
+        //return to previous menu
         else if (select == 3) {
             ListMenuView lmv = new ListMenuView();
             lmv.displayMenu();
         } 
-        //invalid option
+        //invalid selection
         else {
-            System.out.print("\nNot a valid selection. Enter 1, 2, or 3.");
+            System.out.print("\nNOT A VALID SELECTION. Enter 1, 2, or 3.\n");
             listProvisions();
         }
-      
-     /* //if ("2".equals(answer)) /*
-      {
-            System.out.println("\nEnter the filepath where you want to save the provisions list: ");
-            keyboard.nextLine();//This get rid nl character left in the stream
-            filepath = keyboard.nextLine();   
-                        
-            GameControl.printWriter(filepath, provisions, "Provisions");
-        }      */
     }
     
     // The listTeam method

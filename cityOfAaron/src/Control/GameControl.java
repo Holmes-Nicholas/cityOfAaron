@@ -334,18 +334,21 @@ public class GameControl
 
         try (PrintWriter out = new PrintWriter(filepath))
         {
-            out.println("\n\n  " + listTitle + " Inventory List                ");
-            
-            out.printf("%n%-20s%10s", listTitle, "Quantity");
-            out.printf("%n%-20s%10s", "------", "--------"); 
+            //put title
+            out.println("\n\n        " + listTitle + " Inventory List                ");
+            //create columns
+            out.printf("%n%-16s%24s", listTitle, "Quantity");
+            out.printf("%n%-16s%24s", "--------", "--------"); 
             for (ListItem item : list) {
-                out.printf("%n%-20s%7d", item.getName(), item.getNumber());
+                out.printf("%n%-16s%24d", item.getName(), item.getNumber());
             }
-            System.out.println("\nFile \"" + filepath + "\" was successfully saved.");
-            out.close();
+            //put successful save message
+            System.out.println("\nFile \"" + filepath + "\" was successfully saved."); 
+            out.close(); //Close the stream
         }
         catch(Exception e)
         {
-            System.out.println("\nThere was an error saving the list. ");         }
+            //execption if it can't save file
+            System.out.println("\nThere was an error saving the list.");         }
     }
 }
