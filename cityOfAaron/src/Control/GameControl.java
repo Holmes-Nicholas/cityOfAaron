@@ -334,7 +334,7 @@ public class GameControl
 
         try (PrintWriter out = new PrintWriter(filepath))
         {
-            out.println("\n\n   " + listTitle + " Inventory List                ");
+            out.println("\n\n  " + listTitle + " Inventory List                ");
             
             out.printf("%n%-20s%10s", listTitle, "Quantity");
             out.printf("%n%-20s%10s", "------", "--------"); 
@@ -346,7 +346,6 @@ public class GameControl
         }
         catch(Exception e)
         {
-            System.out.println("\nThere was an error saving the list. "); //+ e.getMessage());
-        }
+            System.out.println("\nThere was an error saving the list. ");         }
     }
 }

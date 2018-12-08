@@ -120,30 +120,67 @@ public class ListMenuView extends MenuView
     // ===================================     
     public void listProvisions()
     {
-      System.out.println("\nList or view the provisions in the storehouse selected.");
-      Game theGame = CityOfAaron.getGame();
-      ArrayList<ListItem> provisions = theGame.getProvisions();
+        //Show options to show, save or return
+        System.out.format("\n" +
+                      "***************************************\n" +
+                      "*      DISPLAY OR PRINT PROVISIONS     *\n" +
+                      "***************************************\n" +
+                      " 1 - View the list of Provisions \n" +
+                      " 2 - Save list of Provisions to a file \n" +
+                      " 3 - Return to previous menu\n");
 
-      System.out.format("%-16s%-24s\n", "Provisions", "Quantity");
-      for(ListItem provision : provisions){
-      System.out.format("%-16s%-24s\n", provision.getName(), provision.getNumber());
-      }
+        System.out.print("\nPlease select an option: ");  
+        int select = keyboard.nextInt();
+         
+        // List or view the animals in the storehouse
+        Game theGame = CityOfAaron.getGame();
+        ArrayList<ListItem> provisions = theGame.getProvisions();
+        
+         //action 1 - view the list
+        if (select == 1) {
+            System.out.format("%-16s%-24s\n", "Provision", "Quantity");
+            for(ListItem provision : provisions) 
+                { 
+                   // List or view the tools in the storehouse
+                   System.out.format("%-16s%-24s\n", provision.getName(), provision.getNumber());
+                }
+            listTools();   
+            } 
+        //action 2 - save the list
+        else if (select == 2) {
+            String filepath;
+            
+            //ask user to input the filepath
+            System.out.println("\nPlease enter filepath: ");
+            keyboard.nextLine();
+            filepath = keyboard.nextLine();
+            
+            //call method printwriter to save the file
+            GameControl.printWriter(filepath, provisions, "Provisions");
+            
+            //show again the tools menu
+            listProvisions();
+            
+        } 
+        //action 3 - return to previous menu
+        else if (select == 3) {
+            ListMenuView lmv = new ListMenuView();
+            lmv.displayMenu();
+        } 
+        //invalid option
+        else {
+            System.out.print("\nNot a valid selection. Enter 1, 2, or 3.");
+            listProvisions();
+        }
       
-      String answer; // string to hold answer
-      String filepath; // declare a string to hold the file name
-      
-      System.out.println("\nWould you like to save the list to a file? (y/n)");
-      keyboard.nextLine();
-      answer = keyboard.nextLine();
-      
-      if ("y".equals(answer)) 
+     /* //if ("2".equals(answer)) /*
       {
             System.out.println("\nEnter the filepath where you want to save the provisions list: ");
             keyboard.nextLine();//This get rid nl character left in the stream
             filepath = keyboard.nextLine();   
                         
             GameControl.printWriter(filepath, provisions, "Provisions");
-        }      
+        }      */
     }
     
     // The listTeam method
