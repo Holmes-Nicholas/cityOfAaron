@@ -129,6 +129,21 @@ public class ListMenuView extends MenuView
       System.out.format("%-16s%-24s\n", provision.getName(), provision.getNumber());
       }
       
+      String answer; // string to hold answer
+      String filepath; // declare a string to hold the file name
+      
+      System.out.println("\nWould you like to save the list to a file? (y/n)");
+      keyboard.nextLine();
+      answer = keyboard.nextLine();
+      
+      if ("y".equals(answer)) 
+      {
+            System.out.println("\nEnter the filepath where you want to save the provisions list: ");
+            keyboard.nextLine();//This get rid nl character left in the stream
+            filepath = keyboard.nextLine();   
+                        
+            GameControl.printWriter(filepath, provisions, "Provisions");
+        }      
     }
     
     // The listTeam method

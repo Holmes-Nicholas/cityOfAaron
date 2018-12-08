@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import model.ListItem;
 
@@ -324,12 +325,28 @@ public class GameControl
         }
         catch(Exception e)
         {
-            System.out.println("\nThere was an error saving the game file");
+            System.out.println("\nThere was an error saving the game file.");
         }
     }
 
-    
-    
+    public static void printWriter(String filepath, ArrayList<ListItem> list, String listTitle) {
+                
 
-
+        try (PrintWriter out = new PrintWriter(filepath))
+        {
+            out.println("\n\n   " + listTitle + " Inventory List                ");
+            
+            out.printf("%n%-20s%10s", listTitle, "Quantity");
+            out.printf("%n%-20s%10s", "------", "--------"); 
+            for (ListItem item : list) {
+                out.printf("%n%-20s%7d", item.getName(), item.getNumber());
+            }
+            System.out.println("\nFile \"" + filepath + "\" was successfully saved.");
+            out.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error saving the list. "); //+ e.getMessage());
+        }
+    }
 }
