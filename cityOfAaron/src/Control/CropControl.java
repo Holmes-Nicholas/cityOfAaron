@@ -104,8 +104,8 @@ private static Random random = new Random();
     
     public static int plantCrops(int acresPlanted, CropData cropData) throws CropException
     {
-        //if acresPlanted <= 0, return -1
-        if (acresPlanted <= 0)
+        //if acresPlanted < 0, return -1
+        if (acresPlanted < 0)
             throw new CropException("\nA negative value was input");
     
         //if population <= acresPlanted*.1, return -1
