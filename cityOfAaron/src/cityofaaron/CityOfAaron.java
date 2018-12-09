@@ -51,10 +51,10 @@ public class CityOfAaron
         game1.setPlayer(player1);
         
         //display Player1 name
-        System.out.println("Player Name: " + player1.getName());
+        //System.out.println("Player Name: " + player1.getName());
         
         //display entry from TeamMember enum
-        System.out.println(TeamMember.NIC.getName() + " - " + TeamMember.NIC.getTitle());
+        //System.out.println(TeamMember.NIC.getName() + " - " + TeamMember.NIC.getTitle());
         
         //test from CropData class. Create year1 object and set year to 1980
         CropData year1 = new CropData();
