@@ -186,7 +186,7 @@ private static Random random = new Random();
          //if acresToSell > acresOwned, return -1
         int owned = cropData.getAcresOwned();
         if(acresToSell > owned)
-             throw new CropException ("\nYou have insufficient funds for the amount entered");
+             throw new CropException ("\nYou do not have enough wheat for the amount entered");
                 //acresOwned = acresOwned - acresToSell
         owned -= acresToSell;
         cropData.setAcresOwned(owned);

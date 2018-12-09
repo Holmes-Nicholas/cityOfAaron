@@ -84,7 +84,7 @@ public class ListMenuView extends MenuView
     // ===================================     
     public void listAnimals()
     {
-        //menu to view provisions, save list of provisions, or return to previous menu
+        //menu to view animals, save list of animals, or return to previous menu
         System.out.format("\n" +
                       "***************************************\n" +
                       "*    VIEW OR SAVE ANIMALS LIST     *\n" +
@@ -102,10 +102,10 @@ public class ListMenuView extends MenuView
       
        //view the Animals list
         if (select == 1) {
-            System.out.format("%-16s%-24s\n", "Provision", "Quantity");
+            System.out.format("%-16s%-24s\n", "Animal", "Quantity");
             for(ListItem animal : animals) 
                 { 
-                   // View the Provisions in columns
+                   // View the Animals in columns
                    System.out.format("%-16s%-24s\n", animal.getName(), animal.getNumber());
                 }
             listAnimals();   
@@ -122,7 +122,7 @@ public class ListMenuView extends MenuView
             //call method printwriter to save the file
             GameControl.printWriter(filepath, animals, "Animals");
             
-            //show again the tools menu
+            //show again the animals menu
             listAnimals();
             
         } 
@@ -148,15 +148,64 @@ public class ListMenuView extends MenuView
     // ===================================     
     public void listTools()
     {
+        //menu to view tools, save list of tools, or return to previous menu
+        System.out.format("\n" +
+                      "***************************************\n" +
+                      "*    VIEW OR SAVE TOOLS LIST     *\n" +
+                      "***************************************\n" +
+                      " 1 - View the list of Tools \n" +
+                      " 2 - Save list of Tools to a file \n" +
+                      " 3 - Return to previous menu\n");
+
+      // Display the Tools in the storehouse
+      System.out.println("\nSelect an option:");
+      int select = keyboard.nextInt();
+      
         Game theGame = CityOfAaron.getGame();
         // Display the tools in the storehouse Author David Nielson
         ArrayList<ListItem> tools = theGame.getTools();
         
-        //System.out.println("\nTools in the City of Aaron");
-        System.out.format("%-16s%-24s\n", "Tool", "Quantity");
+        //view the Tools list
+        if (select == 1) {
+            System.out.format("%-16s%-24s\n", "Tool", "Quantity");
+            for(ListItem tool : tools) 
+                { 
+                   // View the Tools in columns
+                   System.out.format("%-16s%-24s\n", tool.getName(), tool.getNumber());
+                }
+            listTools();   
+            } 
+        //save list to file
+        else if (select == 2) {
+            String filepath;
+            
+            //ask user to input the filepath
+            System.out.println("\nPlease enter filepath: ");
+            keyboard.nextLine();
+            filepath = keyboard.nextLine();
+            
+            //call method printwriter to save the file
+            GameControl.printWriter(filepath, tools, "Tools");
+            
+            //show again the tools menu
+            listTools();
+            
+        } 
+        //return to previous menu
+        else if (select == 3) {
+            ListMenuView lmv = new ListMenuView();
+            lmv.displayMenu();
+        } 
+        //invalid selection
+        else {
+            System.out.print("\nNOT A VALID SELECTION. Enter 1, 2, or 3.\n");
+            listTools();
         
-        for(ListItem tool : tools) { 
-        System.out.format("%-16s%-24s\n", tool.getName(), tool.getNumber());
+        //System.out.println("\nTools in the City of Aaron");
+        //System.out.format("%-16s%-24s\n", "Tool", "Quantity");
+        
+        //for(ListItem tool : tools) { 
+        //System.out.format("%-16s%-24s\n", tool.getName(), tool.getNumber());
 }
     }
     
