@@ -11,6 +11,7 @@ import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import model.CropData;
 import model.Game;
+import model.Location;
 import model.Map;
 
 /**
@@ -90,11 +91,45 @@ public class GameMenuView extends MenuView
       private void viewMap()
       {
          // System.out.println("\nView the map");
-          // Call the createMap() method in the GameControl class
+         // Call the createMap() method in the GameControl class
          // MapView mv = new MapView();
          // mv.displayMenu(); 
          // System.out.println("\nview the map " + player1.getName());
-     System.out.format("\nView the map.");
+     System.out.println("\n       ***   VILLAGE MAP   ***   ");
+     
+     Game game = CityOfAaron.getGame();
+     Map map = game.getMap();
+     
+     //Set grid
+     int r = 0;
+     int c = 0;
+     int line = 0;
+     System.out.println("");
+     System.out.println("       1     2     3     4     5   ");
+     while (r < 5)
+     {
+         line = r + 1;
+         System.out.printf(" " + line + " ");
+         while (c < 5)
+         {
+             System.out.printf(" | ");
+             Location locations = map.getLocation(r, c);
+             System.out.printf(locations.getSymbol());
+             c++;
+         }
+         System.out.println(" | ");
+         c = 0;
+         r++;
+     }
+     System.out.println("\nKey: ");
+     System.out.println("~~~ : River West");
+     System.out.println("$$$ : Market");
+     System.out.println("|^| : Temple");
+     System.out.println("HHH : Housing");
+     System.out.println("(~) : Lake");
+     System.out.println("FFF : Farmland");
+     System.out.println("xxx : Lamanite Border");
+     System.out.println(">>> : Undeveloped");
       }
     
     // The viewList method
@@ -104,7 +139,7 @@ public class GameMenuView extends MenuView
     // ===================================     
     private void viewList()
     {
-      System.out.println("\nView the list.");
+     System.out.println("\nView the list.");
      ListMenuView lmv = new ListMenuView();
      lmv.displayMenu(); //changed from displayMenuView to displayMenu 11.16.18 NH
     }

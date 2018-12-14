@@ -114,7 +114,7 @@ public class GameControl
         loc.setDescription(riverWest  + "\nLand that borders the river is fertile farmland." +
                 "\nOne bushel will plant two acres of wheat." +
                 "\nIt takes 20 bushels of wheat to feed one person."); 
-        loc.setSymbol("~~~~~");  
+        loc.setSymbol("~~~");  
 
         // set this location object in each cell of the array in column 0      
         for(int i = 0; i < MAX_ROW; i++)
@@ -132,7 +132,10 @@ public class GameControl
         locMarket.setDescription(market);
         locMarket.setSymbol("$$$");  
         
-        theMap.setLocation(1, 3, locMarket);
+        for(int j = 2; j < 4; j++)
+        {
+            theMap.setLocation(1, j, locMarket);
+        }
         
          //this is the location object for the temple.
         String temple = "\nThis is the City of Aaron Temple." + 
@@ -145,7 +148,7 @@ public class GameControl
         // use setters in the Location class to set the description and symbol
         locTemple.setDescription(temple + "\nYou can give an offering of wheat." +
                                         "\nTen percent is a great idea!");
-        locTemple.setSymbol("|^^|");  
+        locTemple.setSymbol("|^|");  
         
         theMap.setLocation(2, 2, locTemple);
         
@@ -159,7 +162,7 @@ public class GameControl
         
         // use setters in the Location class to set the description and symbol
         locHousing.setDescription(housing  + "\nBe sure to plant enough wheat to feed everyone. Don't forget new residents.");
-        locHousing.setSymbol("/\\ /\\ /\\");            
+        locHousing.setSymbol("HHH");            
         
          // set this location object in each cell of the array in column 0      
         for(int i = 2; i < MAX_ROW; i++)
@@ -177,7 +180,7 @@ public class GameControl
         Location locLake = new Location();
         
         // use setters in the Location class to set the description and symbol
-        locLake.setDescription(market);
+        locLake.setDescription(lake);
         locLake.setSymbol("(~)");  
         
         theMap.setLocation(1, 4, locLake);
@@ -190,7 +193,7 @@ public class GameControl
 
         // use setters in the Location class to set the description and symbol
         locFarmland.setDescription(farmland + "\nBe sure to own enough land so that you can grow enough wheat."); 
-        locFarmland.setSymbol("/////");  
+        locFarmland.setSymbol("FFF");  
 
         // set this location object in each cell of the array in column 0      
         for(int i = 1; i < MAX_ROW; i++)
@@ -206,7 +209,7 @@ public class GameControl
 
         // use setters in the Location class to set the description and symbol
         locBorder.setDescription(border); 
-        locBorder.setSymbol("xxxxx");  
+        locBorder.setSymbol("xxx");  
 
         // set this location object in each cell of the array in column 0      
         for(int j = 1; j < MAX_COL; j++)
@@ -222,7 +225,7 @@ public class GameControl
 
         // use setters in the Location class to set the description and symbol
         locUndeveloped.setDescription(undeveloped); 
-        locUndeveloped.setSymbol(">>>>>");  
+        locUndeveloped.setSymbol(">>>");  
 
         // set this location object in each cell of the array in column 0      
         for(int i = 3; i < MAX_ROW; i++)
