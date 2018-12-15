@@ -1,7 +1,7 @@
 // The GameMenuView class - part of the view layer
 // Object of this class manages the main menu
-// Author:  Jared Goff
-// Date last modified: Dec 6 2018
+// Author:  Jared Goff, Nicholas Holmes, David Nielson
+// Date last modified: Dec 15 2018
 //-------------------------------------------------------------
 
 package view;
@@ -84,17 +84,12 @@ public class GameMenuView extends MenuView
 
 
     // The viewMap method
-    // Purpose: viewMap
+    // Purpose: Displays the game map
     // Parameters: none
     // Returns: none
     // ===================================     
-      private void viewMap()
-      {
-         // System.out.println("\nView the map");
-         // Call the createMap() method in the GameControl class
-         // MapView mv = new MapView();
-         // mv.displayMenu(); 
-         // System.out.println("\nview the map " + player1.getName());
+    private void viewMap()
+    {
      System.out.println("\n       ***   VILLAGE MAP   ***   ");
      
      Game game = CityOfAaron.getGame();
@@ -130,7 +125,7 @@ public class GameMenuView extends MenuView
      System.out.println("FFF : Farmland");
      System.out.println("xxx : Lamanite Border");
      System.out.println(">>> : Undeveloped");
-      }
+    }
     
     // The viewList method
     // Purpose: viewList
