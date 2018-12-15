@@ -36,11 +36,11 @@ public class GameMenuView extends MenuView
           "**********************************\n" +
           "* CITY OF AARON: MAIN GAME MENU  *\n" +
           "**********************************\n" +
-          " 1 - viewMap\n" +
-          " 2 - viewList\n" +
-          " 3 - moveToNewLocation\n" +
-          " 4 - manageCrops\n" +          
-          " 5 - Quit\n",
+          " 1 - View the map\n" +
+          " 2 - View a list\n" +
+          " 3 - Move to a new location\n" +
+          " 4 - Manage the crops\n" +          
+          " 5 - Quit and return to the main menu\n",
         
      5);
   }
