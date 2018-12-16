@@ -9,6 +9,7 @@ import model.CropData;
 import java.util.Random;
 import exceptions.*;
 
+
 /**
  *
  * Group author of buyLand method
@@ -123,9 +124,18 @@ private static Random random = new Random();
         int acresOwned = cropData.getAcresOwned();                
         if (acresOwned <= acresPlanted)
             throw new CropException("\nThere is insufficient land to plant this much land");
-               
+        
+        //WheatInStore -= acresPlanted 
+        WheatInStore -= (acresPlanted/2);
+        cropData.setWheatInStore(WheatInStore);
+        
+        //acresPlanted = acresToPlant
+        //acresToPlant =+ acresPlanted;
+        //cropData.setAcresPlanted(acresToPlant);
+        
         //return acresPlanted
         return acresPlanted;  
+        
     } 
     /**
 // The setOffering method
