@@ -152,8 +152,8 @@ public class GameMenuView extends MenuView
       System.out.println("\nEnter row:");
         int locRow = keyboard.nextInt();
         System.out.println("\nEnter column:");
-        int locCol = keyboard.nextInt();
-        String desc = map.getLocation(locRow, locCol).getDescription();
+        int locColumn = keyboard.nextInt();
+        String desc = map.getLocation(locRow, locColumn).getDescription();
         System.out.println("\nLocation description:"
                 + "\n " + desc);
     }
