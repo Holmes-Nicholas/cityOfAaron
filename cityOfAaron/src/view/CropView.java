@@ -198,13 +198,13 @@ public class CropView {
         System.out.format("\n%-25s %8d", "New people:", cropData.getNewPeople());
         System.out.format("\n%-25s %8d", "Harvest:", cropData.getHarvest());        
         System.out.format("\n%-25s %8d", "Wheat for food:",cropData.getWheatForFood());
-        System.out.format("\n%-25s %8d", "Acres planted:", cropData.getAcresPlanted());                 
+        System.out.format("\n%-25s %8d", "Acres planted:", cropData.getAcresPlanted());              
         System.out.print("\n----------------------------------"); 
     }
     
      // The runCropView method()
     // Purpose: runs the methods to manage the crops game
-    // Parameters: nonee
+    // Parameters: none
     // Returns: none
   
     public static void runCropView()
