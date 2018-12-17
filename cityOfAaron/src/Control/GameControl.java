@@ -354,4 +354,11 @@ public class GameControl
             //execption if it can't save file
             System.out.println("\nThere was an error saving the list.");         }
     }
+     public static void setStartingPosition()  
+           {
+           Game theGame = CityOfAaron.getGame();
+           Player player = game.getPlayer();
+           player.setColumn(0);
+           player.setRow(0);
+           }
 }
