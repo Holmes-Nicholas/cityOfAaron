@@ -202,7 +202,7 @@ public class GameControl
         }
         
         // This is the Lamanite boarder object.
-        String border = "\nThe northen land border the Lamanite Kingdom.";
+        String border = "\nYou are at the northern land border to the Lamanite Kingdom.";
                       
         // create a new Location object
         Location locBorder = new Location();
