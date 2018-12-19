@@ -61,7 +61,7 @@ public class CityOfAaron
         year1.setYear(1980);
         
         //display year1 year
-        System.out.println("Year Started: " + year1.getYear()); 
+      //  System.out.println("Year Started: " + year1.getYear()); 
         
         // ListItem created by Jared Goff
         //Test the ListItem class.  Create arces and setnumber to 100

@@ -50,8 +50,6 @@ private static Random random = new Random();
         owned += acresToBuy;
         cropData.setAcresOwned(owned);
               
-        //return acresOwned
-        //return owned;
     }
     
 /**

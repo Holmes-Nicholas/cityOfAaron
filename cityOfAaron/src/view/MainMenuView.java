@@ -79,7 +79,13 @@ public class MainMenuView extends MenuView
     {
            
     // Display the Banner Page.
-    System.out.println("\nWelcome to BE MORE CREATIVE the city of Aaron.");
+    System.out.println("\nWelcome to the City of Aaron. You have been chosen to\n" +
+            "be the new ruler of the city. You are responsible for\n" +
+            "the welfare of the people. You need to ensure you buy and\n" +
+            "an appropriate amount of land to plant wheat to feed the\n" +
+            "the people. If you do not take care of the people you will\n" +
+            "be removed from your position. You do not want to know what\n" +
+            "the penalty for failure is.\n");
    
     // Prompt for and get the user’s name.
     String name;

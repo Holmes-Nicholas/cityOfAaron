@@ -6,10 +6,6 @@
  */
 package exceptions;
 
-/**
- *
- * @author jgoff
- */
 public class CropException extends Exception
 {
     // Default constructor

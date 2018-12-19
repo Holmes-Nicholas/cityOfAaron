@@ -163,8 +163,7 @@ public class GameControl
         // use setters in the Location class to set the description and symbol
         locHousing.setDescription(housing  + "\nBe sure to plant enough wheat to feed everyone. Don't forget new residents.");
         locHousing.setSymbol("HHH");            
-        
-         // set this location object in each cell of the array in column 0      
+           
         for(int i = 2; i < MAX_ROW; i++)
         {
             for(int j = 3; j < MAX_COL; j++)
