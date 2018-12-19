@@ -137,27 +137,7 @@ public class CropView {
                 }
         }while(paramsNotOkay);
     }
-
-    // The runCropView method()
-    // Purpose: runs the methods to manage the crops game
-    // Parameters: none
-    // Returns: none
-    public static void runCropView()
-    {
-        // call the buyLandView( ) method
-        buyLandView( );
-        
-        // call the plantCorpView method
-        plantCropsView();
-        
-        // add calls to the other crop view methods
-        // as they are written
-        feedPeopleView( );
-        
-        //call the sellLandView
-        sellLandView( );
-        
-    }
+    
     public static void sellLandView()
     {
         // Get the cost of land for this round.
@@ -200,5 +180,51 @@ public class CropView {
         // output how much land we now own
         System.out.format("You now own %d acres of land. \n", cropData.getAcresOwned());
     }
+    
+    // The displayCropsReportView method
+    // Purpose: Display the data from the cropData object
+    // Parameters: none
+    // Returns: none
+    public static void displayCropsReportView()
+    {
+               
+        System.out.format("\n%s, Here is your report!", CityOfAaron.getGame().getPlayer().getName());
+        System.out.format("\n%-25s %8d", "Year:", cropData.getYear());
+        System.out.format("\n%-25s %8d", "Population:", cropData.getPopulation());
+        System.out.format("\n%-25s %8d", "Acres owned:", cropData.getAcresOwned());
+        System.out.format("\n%-25s %8d", "Crop yield:", cropData.getCropYield());
+        System.out.format("\n%-25s %8d", "Wheat in store:", cropData.getWheatInStore());   
+        System.out.format("\n%-25s %8d", "How many people starved:", cropData.getNumberWhoDied());
+        System.out.format("\n%-25s %8d", "New people:", cropData.getNewPeople());
+        System.out.format("\n%-25s %8d", "Harvest:", cropData.getHarvest());        
+        System.out.format("\n%-25s %8d", "Wheat for food:",cropData.getWheatForFood());
+        System.out.format("\n%-25s %8d", "Acres planted:", cropData.getAcresPlanted());              
+        System.out.print("\n----------------------------------"); 
+    }
+    
+     // The runCropView method()
+    // Purpose: runs the methods to manage the crops game
+    // Parameters: none
+    // Returns: none
+  
+    public static void runCropView()
+    {
+        // Call the displayCropsReportView() method
+        displayCropsReportView();
+        
+        // Call the buyLandView() method
+        buyLandView();
+        
+        // Call the sellLandView() method
+        sellLandView();
+        
+        // Call the feedPeopleView() method
+        feedPeopleView();
+        
+        // Call the plantCrops() method
+        plantCropsView();           
+       
+    }
 }
+
 

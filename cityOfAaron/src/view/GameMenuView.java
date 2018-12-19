@@ -146,7 +146,16 @@ public class GameMenuView extends MenuView
     // ===================================     
     public void moveToNewLocation()
     {
-      System.out.println("\nMove to new location.");
+      System.out.println("\nEnter the coordinates of the location you wish to visit.");
+      Game game = CityOfAaron.getGame();
+      Map map = game.getMap();
+      System.out.println("\nEnter row:");
+        int locRow = keyboard.nextInt();
+        System.out.println("\nEnter column:");
+        int locColumn = keyboard.nextInt();
+        String desc = map.getLocation(locRow, locColumn).getDescription();
+        System.out.println("\nLocation description:"
+                + "\n " + desc);
     }
     
     // The manageCrops method
